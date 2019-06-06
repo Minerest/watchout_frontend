@@ -1,0 +1,31 @@
+ericd@hacktop:~/Desktop/react/testing/src$ npm run-script build
+
+> testing@0.1.0 build /home/ericd/Desktop/react/testing
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  49.01 KB  build/static/js/2.656f2b49.chunk.js
+  1.53 KB   build/static/js/main.82a54b7c.chunk.js
+  762 B     build/static/js/runtime~main.a8a9905a.js
+  411 B     build/static/css/main.7117f1a6.chunk.css
+
+The project was built assuming it is hosted at the server root.
+You can control this with the homepage field in your package.json.
+For example, add this to build it for GitHub Pages:
+
+  "homepage" : "http://myname.github.io/myapp",
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://bit.ly/CRA-deploy
+
