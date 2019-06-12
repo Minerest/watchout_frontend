@@ -44,6 +44,7 @@ class Thermometer extends Component {
 		return (
 			<div className="thermometer">
 				<div style={{"height": this.state.height, "top": this.state.top }} className="filling"/>
+				<div className="thermobulb" />
 			</div>
 		)
 	}
@@ -198,11 +199,11 @@ class Container extends Component {
 	calc_dangerrating(){
 
 		let danger_rating = 0;
-		danger_rating += this.state.crime_stats.assault;
+		danger_rating += this.state.crime_stats.assault * .8;
 		danger_rating += this.state.crime_stats.murder * 20;
 		danger_rating += this.state.crime_stats.theft * .5;
-		danger_rating += this.state.crime_stats.robbery;
-		danger_rating += this.state.crime_stats.other * .5;
+		danger_rating += this.state.crime_stats.robbery * .7;
+		danger_rating += this.state.crime_stats.other * .2;
 
 		if (danger_rating > 100){
 			danger_rating = 100;
@@ -226,7 +227,9 @@ class Container extends Component {
 						<div className="data">
 							<DataView  d={this.state.crime_stats} />
 						</div>
-						<Thermometer danger_rating={this.state.danger_rating}/>
+						<div className="thermodiv">
+							<Thermometer danger_rating={this.state.danger_rating}/>
+						</div>
 					</div>
 				</div>
 				<div className="maps_container">
