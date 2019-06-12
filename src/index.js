@@ -10,25 +10,40 @@ class Thermometer extends Component {
 		super(props);
 		this.change_filling = this.change_filling.bind(this);
 		this.state = {
-			marginTop: 0,
-			height: 0
+			top: 0,
+			height: 0,
+			danger_rating: 0
 		}
 	}
 
-	change_filling(){
-		let danger_rating = this.props.danger_rating;
+	change_filling(dr){
+		let danger_rating = dr;
 		let height_offset = 100 - danger_rating;
 		let stylez = {
-			marginTop: height_offset,
-			height: danger_rating
-		}
-		this.setState(stylez);
+			top: height_offset+"%",
+			height: danger_rating+"%"
+		};
+		this.setState({
+			top: stylez.top,
+			height: stylez.height,
+			danger_rating: dr
+		});
+
 	}
+
+	shouldComponentUpdate(nextProps, nextState, nextContext) {
+		if (this.state.danger_rating !== nextProps.danger_rating) {
+			this.change_filling(nextProps.danger_rating);
+			return true;
+		}
+		return false;
+	}
+
 
 	render() {
 		return (
 			<div className="thermometer">
-				<div style={{"height": this.state.height, "margin-top": this.state.marginTop }} className="filling"/>
+				<div style={{"height": this.state.height, "top": this.state.top }} className="filling"/>
 			</div>
 		)
 	}
@@ -41,7 +56,7 @@ class Watchout extends Component {
 	}
 }
 
-class DataView extends Component {out
+class DataView extends Component {
 
 	render(){
 		return (
@@ -107,7 +122,6 @@ class SimpleMap extends Component {
 		}
 
 		this.setState({width: width, height: height});
-		console.log("am i working");
 	}
 
     getData(lat, lng){
@@ -165,8 +179,6 @@ class Container extends Component {
 			side_div: "20%"
 		};
 
-		this.update_dataview.bind(this);
-
 		this.state.crime_stats = {
 			assault: 0,
 			murder: 0,
@@ -175,17 +187,28 @@ class Container extends Component {
 			other: 0
 		};
 		this.state.danger_rating = 0;
+		this.update_dataview = this.update_dataview.bind(this);
+		this.get_danger_rating = this.get_danger_rating.bind(this);
+	}
+
+	get_danger_rating(){
+		return this.state.danger_rating;
 	}
 
 	calc_dangerrating(){
+
 		let danger_rating = 0;
 		danger_rating += this.state.crime_stats.assault;
 		danger_rating += this.state.crime_stats.murder * 20;
 		danger_rating += this.state.crime_stats.theft * .5;
 		danger_rating += this.state.crime_stats.robbery;
 		danger_rating += this.state.crime_stats.other * .5;
-		danger_rating = parseInt(danger_rating / 1000);
-		this.setState.danger_rating = danger_rating;
+
+		if (danger_rating > 100){
+			danger_rating = 100;
+		}
+		this.setState({danger_rating: danger_rating});
+
 	}
 
 	update_dataview = crime_set => {
