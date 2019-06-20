@@ -113,7 +113,7 @@ class SimpleMap extends Component {
 		let window_height = window.innerHeight;
 		let width;
 		let height;
-		if (window_width > 480){
+		if (window_width > 1000){
 			width = window_width / 2;
 			height = window_height / 2;
 		}
@@ -127,18 +127,48 @@ class SimpleMap extends Component {
 
     getData(lat, lng){
 
-        let xhttp;
-		xhttp = new XMLHttpRequest();
-        let base_url = "https://www.ericdiaz.dev/single";
-		let req_url = base_url + "?lat=" + lat + "&lon=" + lng;
-		xhttp.onreadystatechange = () => {
-			if(xhttp.readyState === 4 && xhttp.status === 200) {
-				let resp = xhttp.responseText;
-				this.props.update(resp)
-			}
-    	};
-		xhttp.open("GET", req_url, true);
-		xhttp.send();
+		let local_url = "http://127.0.0.1:5000";
+		let single = "/single";
+		let main_db = "/main_db";
+		let web_url = "https://www.ericdiaz.dev";
+		let url_args = "?lat=" + lat + "&lon=" + lng;
+		let single_url = web_url + single + url_args;
+		let main_db_url = web_url + main_db + url_args;
+		console.log(main_db_url);
+		fetch(single_url).then(	function(response) {
+			return response.json();
+		}).then(function (re){
+			console.log(re);
+			this.props.update(re);
+		}.bind(this));
+
+
+
+		fetch(main_db_url).then((res) => {
+			return res.json()
+		}).then( (r) => {
+			console.log(r);
+			this.props.update_banner(r);
+		})
+			// this.props.update_banner(r);
+
+
+
+
+
+
+		// let xhttp;
+		// xhttp = new XMLHttpRequest();
+        // let base_url = "https://www.ericdiaz.dev/single";
+		// let req_url = base_url + "?lat=" + lat + "&lon=" + lng;
+		// xhttp.onreadystatechange = () => {
+		// 	if(xhttp.readyState === 4 && xhttp.status === 200) {
+		// 		let resp = xhttp.responseText;
+		// 		this.props.update(resp)
+		// 	}
+    	// };
+		// xhttp.open("GET", req_url, true);
+		// xhttp.send();
 
     }
 
@@ -170,14 +200,13 @@ class Container extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			crime_stats: {
-				assault: 0,
-				murder: 0,
-				theft: 0,
-				robbery: 0,
-				other: 0
-			},
-			side_div: "20%"
+			side_div: "20%",
+			f: null,
+			Description: "Loading...",
+			resp_for_banner: "",
+			Date: "",
+			Coords: "",
+			first_load: false
 		};
 
 		this.state.crime_stats = {
@@ -190,6 +219,8 @@ class Container extends Component {
 		this.state.danger_rating = 0;
 		this.update_dataview = this.update_dataview.bind(this);
 		this.get_danger_rating = this.get_danger_rating.bind(this);
+		this.update_banner = this.update_banner.bind(this);
+		this.banner_wrapper = this.banner_wrapper.bind(this);
 	}
 
 	get_danger_rating(){
@@ -212,10 +243,30 @@ class Container extends Component {
 
 	}
 
-	update_dataview = crime_set => {
-		let data = JSON.parse(crime_set);
+	update_dataview = data => {
 		this.setState({crime_stats : data});
 		this.calc_dangerrating();
+	};
+
+	banner_wrapper(res){
+		let i = Math.floor(Math.random() * 300);
+		console.log(i);
+		console.log(res[i]);
+
+		let Description = "";
+		Description += "Description : " + res[i].description;
+		let date = "Date : " + res[i].date;
+		let lat_lon = "Coordinates : " + res[i].latitude + ", " + res[i].longitude;
+		this.setState({
+			Description: Description,
+			Date: date,
+			Coords: lat_lon
+		})
+
+	}
+
+	update_banner = (res) => {
+		this.banner_wrapper(res);
 	};
 
 	render(){
@@ -225,7 +276,7 @@ class Container extends Component {
 				<div className="that_div">
 					<div>
 						<div className="data">
-							<DataView  d={this.state.crime_stats} />
+							<  DataView d={this.state.crime_stats} />
 						</div>
 						<div className="thermodiv">
 							<Thermometer danger_rating={this.state.danger_rating}/>
@@ -233,8 +284,12 @@ class Container extends Component {
 					</div>
 				</div>
 				<div className="maps_container">
-					<SimpleMap update={this.update_dataview} />
-					<input type="text" placeholder="Enter an address!" className="input_box"/>
+					<SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
+					<div id={"banner"}>
+						<p>{this.state.Description}</p>
+						<p>{this.state.Date}</p>
+						<p>{this.state.Coords}</p>
+					</div>
 				</div>
 			</div>
 		)

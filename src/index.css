@@ -3,6 +3,7 @@
     height: 100%;
     /*border: khaki 4px solid;*/
     margin-left: 25%;
+
 }
 
 .watchout {
@@ -14,7 +15,7 @@
 
     display: inline-block;
     float:left;
-    text-align: center;
+    text-align: right;
 }
 
 .right_items {
@@ -35,8 +36,9 @@
 
     display: inline-block;
     position: relative;
-    width: 100%;
-    right: 70px;
+    width: 67%;
+    /*right: 70px;*/
+    float: left;
 }
 
 .data_items {
@@ -46,8 +48,11 @@
 }
 
 .thermodiv {
-    display: inline;
-    position: absolute;
+    display: inline-block;
+    position: relative;
+    float: right;
+    height: 185px;
+    width: 33%;
 }
 
 .input_box {
@@ -58,11 +63,12 @@
 }
 
 .that_div {
-    width: 50%;
+    width: 100%;
     /*border: chartreuse 20px solid;*/
+    height: 270px;
     display: inline-block;
     position: relative;
-    margin-left: 25%;
+    background-color: black;
 }
 
 .thermometer {
@@ -100,12 +106,12 @@
     .right_items{
         position: absolute;
         left: 140px;
-        text-align: center;
+        text-align: left;
     }
 }
 
 
-@media(max-width: 480px){
+@media(max-width: 1000px){
     .maps_container {
         left: 0;
         margin-left: 5%;
@@ -124,6 +130,12 @@
         margin-left: 0;
     }
 
+}
+
+#banner p {
+    display: inline;
+    padding: 20px;
+    font-size: 20px;
 }
 
 body {
