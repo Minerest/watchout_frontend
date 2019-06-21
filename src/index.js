@@ -206,7 +206,7 @@ class Container extends Component {
 			resp_for_banner: "",
 			Date: "",
 			Coords: "",
-			first_load: false
+			should_banner_load: false
 		};
 
 		this.state.crime_stats = {
@@ -223,11 +223,27 @@ class Container extends Component {
 		this.banner_wrapper = this.banner_wrapper.bind(this);
 	}
 
+	banner_timeout(){
+		if (this.state.should_banner_load){
+
+			setInterval(() => {
+				let n = Math.floor(Math.random() * 300);
+				let obj = this.state.resp_for_banner[n];
+				console.log(obj);
+				this.setState({
+					Date: obj.date,
+					Coords: obj.latitude + ", " + obj.longitude,
+					Description: obj.description
+				});
+			}, 2500);
+		}
+	}
+
 	get_danger_rating(){
 		return this.state.danger_rating;
 	}
 
-	calc_dangerrating(){
+	calc_danger_rating(){
 
 		let danger_rating = 0;
 		danger_rating += this.state.crime_stats.assault * .8;
@@ -245,10 +261,14 @@ class Container extends Component {
 
 	update_dataview = data => {
 		this.setState({crime_stats : data});
-		this.calc_dangerrating();
+		this.calc_danger_rating();
 	};
 
 	banner_wrapper(res){
+		this.setState({
+			resp_for_banner: res
+		});
+		return;
 		let i = Math.floor(Math.random() * 300);
 		console.log(i);
 		console.log(res[i]);
@@ -266,7 +286,12 @@ class Container extends Component {
 	}
 
 	update_banner = (res) => {
+		this.setState({
+			should_banner_load: true
+		});
 		this.banner_wrapper(res);
+		this.banner_timeout();
+
 	};
 
 	render(){
