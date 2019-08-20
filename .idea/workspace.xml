@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/DataView.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SimpleMap.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Thermometer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SimpleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleMap.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +160,7 @@
       <workItem from="1560368004759" duration="861000" />
       <workItem from="1560373962175" duration="4216000" />
       <workItem from="1566331563073" duration="211000" />
-      <workItem from="1566331815596" duration="2660000" />
+      <workItem from="1566331815596" duration="2914000" />
     </task>
     <servers />
   </component>

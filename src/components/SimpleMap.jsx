@@ -3,13 +3,13 @@ import React from "react";
 import { Component } from 'react';
 
 export class SimpleMap extends Component {
-
+//https://www.ericdiaz.dev/main_db?lat=34.0448065379685&lon=-118.2408526314814 SimpleMap.jsx:62
     constructor(props){
         super(props);
         this.state = {
             center: {
-                lat: 34.115784,
-                lng: -117.302399
+                lat: 34.0448,
+                lng: -118.2408
             },
             zoom: 11,
             width: 0,
