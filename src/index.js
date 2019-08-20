@@ -41,9 +41,9 @@ class Container extends Component {
 			return;
 		}
 		if (this.state.should_banner_load){
-			this.setState({loaded: false})
+			this.setState({first_load: false});
 			setInterval(() => {
-				let n = Math.floor(Math.random() * 300);
+				let n = Math.floor(Math.random() * 30);
 				let obj = this.state.resp_for_banner[n];
 				console.log(obj);
 				this.setState({
@@ -117,7 +117,7 @@ class Container extends Component {
 				<div className="that_div">
 					<div>
 						<div className="data">
-							<  DataView d={this.state.crime_stats} />
+							<DataView d={this.state.crime_stats} amount_of_entries="3"/>
 						</div>
 						<div className="thermodiv">
 							<Thermometer danger_rating={this.state.danger_rating}/>
