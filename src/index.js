@@ -43,7 +43,7 @@ class Container extends Component {
 		if (this.state.should_banner_load){
 			this.setState({first_load: false});
 			setInterval(() => {
-				let n = Math.floor(Math.random() * 30);
+				let n = Math.floor(Math.random() * this.state.resp_for_banner.length);
 				let obj = this.state.resp_for_banner[n];
 				console.log(obj);
 				this.setState({
@@ -84,21 +84,6 @@ class Container extends Component {
 		this.setState({
 			resp_for_banner: res
 		});
-		return;
-		let i = Math.floor(Math.random() * 300);
-		console.log(i);
-		console.log(res[i]);
-
-		let Description = "";
-		Description += "Description : " + res[i].description;
-		let date = "Date : " + res[i].date;
-		let lat_lon = "Coordinates : " + res[i].latitude + ", " + res[i].longitude;
-		this.setState({
-			Description: Description,
-			Date: date,
-			Coords: lat_lon
-		})
-
 	}
 
 	update_banner = (res) => {

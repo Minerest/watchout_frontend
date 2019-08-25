@@ -3,7 +3,7 @@ import React from "react";
 import { Component } from 'react';
 
 export class SimpleMap extends Component {
-//https://www.ericdiaz.dev/main_db?lat=34.0448065379685&lon=-118.2408526314814 SimpleMap.jsx:62
+
     constructor(props){
         super(props);
         this.state = {
@@ -59,11 +59,9 @@ export class SimpleMap extends Component {
         let url_args = "?lat=" + lat + "&lon=" + lng;
         let single_url = web_url + single + url_args;
         let main_db_url = web_url + main_db + url_args;
-        console.log(main_db_url);
         fetch(single_url).then(	function(response) {
             return response.json();
         }).then(function (re){
-            console.log(re);
             this.props.update(re);
         }.bind(this));
 
