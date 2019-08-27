@@ -5,9 +5,9 @@ import {SimpleMap} from "./SimpleMap";
 import {DataView} from "./DataView";
 import {Watchout} from "./Header";
 import {Thermometer} from "./Thermometer";
+import { Spring, config } from 'react-spring/renderprops';
 
-
-export class Watchout_container extends Component {
+export class WatchoutContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -102,27 +102,35 @@ export class Watchout_container extends Component {
 
     render(){
         return(
-            <div className="master_container">
-                <div className="watchout"><Watchout /></div>
-                <div className="that_div">
-                    <div>
-                        <div className="data">
-                            <DataView d={this.state.crime_stats} amount_of_entries="3"/>
-                        </div>
-                        <div className="thermodiv">
-                            <Thermometer danger_rating={this.state.danger_rating}/>
-                        </div>
-                    </div>
-                </div>
-                <div className="maps_container">
-                    <SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
-                    <div id={"banner"}>
-                        <p>{this.state.Description}</p>
-                        <p>{this.state.Date}</p>
-                        <p>{this.state.Coords}</p>
-                    </div>
-                </div>
-            </div>
+           <Spring
+               from={{opacity:0, marginTop:-1500}} to={{opacity:1, marginTop:0}}
+               config={config.wobbly}
+               >
+               {props =>
+                   <div className="master_container" style={props}>
+                       <div className="watchout"><Watchout/></div>
+                       <div className="that_div">
+                           <div>
+                               <div className="data">
+                                   <DataView d={this.state.crime_stats} amount_of_entries="3"/>
+                               </div>
+                               <div className="thermodiv">
+                                   <Thermometer danger_rating={this.state.danger_rating}/>
+                               </div>
+                           </div>
+                       </div>
+                       <div className="maps_container">
+                           <SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
+                           <div id={"banner"}>
+                               <p>{this.state.Description}</p>
+                               <p>{this.state.Date}</p>
+                               <p>{this.state.Coords}</p>
+                           </div>
+                       </div>
+                   </div>
+               }
+               </Spring>
+
         )
     }
 }
