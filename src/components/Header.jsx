@@ -1,6 +1,5 @@
 import React from "react";
 import { Component } from 'react';
-import { Spring, animated } from 'react-spring/renderprops'
 
 export class Watchout extends Component {
 

@@ -73,26 +73,6 @@ export class SimpleMap extends Component {
             console.log(r);
             this.props.update_banner(r);
         })
-        // this.props.update_banner(r);
-
-
-
-
-
-
-        // let xhttp;
-        // xhttp = new XMLHttpRequest();
-        // let base_url = "https://www.ericdiaz.dev/single";
-        // let req_url = base_url + "?lat=" + lat + "&lon=" + lng;
-        // xhttp.onreadystatechange = () => {
-        // 	if(xhttp.readyState === 4 && xhttp.status === 200) {
-        // 		let resp = xhttp.responseText;
-        // 		this.props.update(resp)
-        // 	}
-        // };
-        // xhttp.open("GET", req_url, true);
-        // xhttp.send();
-
     }
 
     _onClick = ({x, y, lat, lng, event}) => this.getData(lat,lng);
