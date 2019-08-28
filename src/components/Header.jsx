@@ -35,6 +35,6 @@ export class Watchout extends Component {
     render(){
         return(
             <h1>{this.state.watchout}</h1>
-        )
+        );
     }
 }

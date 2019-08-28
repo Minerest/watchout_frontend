@@ -109,6 +109,7 @@ export class WatchoutContainer extends Component {
                {props =>
                    <div className="master_container" style={props}>
                        <div className="watchout"><Watchout/></div>
+                       <button onClick={this.props.back_to_main}> BACK IT UP!</button>
                        <div className="that_div">
                            <div>
                                <div className="data">
@@ -119,6 +120,7 @@ export class WatchoutContainer extends Component {
                                </div>
                            </div>
                        </div>
+
                        <div className="maps_container">
                            <SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
                            <div id={"banner"}>
@@ -130,7 +132,6 @@ export class WatchoutContainer extends Component {
                    </div>
                }
                </Spring>
-
         )
     }
 }
