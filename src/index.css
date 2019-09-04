@@ -102,6 +102,11 @@
 
 }
 
+#resume_container a {
+    text-decoration: none;
+    color: yellow;
+}
+
 @media(max-width: 680px){
     .right_items{
         position: absolute;
@@ -117,10 +122,7 @@
         font-size: 1.5rem;
 
     }
-    #resume_container a {
-        text-decoration: none;
-        color: yellow;
-    }
+
 }
 
 @media(max-width: 1000px){
