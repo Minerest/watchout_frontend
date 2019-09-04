@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RezContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RezContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -141,7 +143,8 @@
       <workItem from="1566956662226" duration="1831000" />
       <workItem from="1567545354366" duration="284000" />
       <workItem from="1567558490988" duration="2605000" />
-      <workItem from="1567626630921" duration="648000" />
+      <workItem from="1567626630921" duration="938000" />
+      <workItem from="1567628205772" duration="1021000" />
     </task>
     <servers />
   </component>

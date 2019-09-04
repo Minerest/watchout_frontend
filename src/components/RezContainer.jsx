@@ -16,15 +16,17 @@ export class RezContainer extends Component {
                 <div id='how_its_made'>
                     <h1>How was this site was made?</h1>
                 </div>
-                <div id='the_server'>
-                    <p id="rez_paragraph"> I have a laptop that's running Ubuntu 18.04 as the server for this React application.
+                <div id='how_its_made'>
+                    <p className="rez_paragraph" id="left_rez"> I have a laptop that's running Ubuntu 18.04 as the server for this React application.
                         It's currently using <a href="https://www.nginx.com/">NGINX</a> to run the Web Server listening on Port 80 and 443.
                         NGINX communicates with a Python WSGI HTTP Server called <a href="https://gunicorn.org/">GUINICORN</a> listening on an internal web socket.
                         That web socket communicates with my <a href="https://github.com/Minerest/gcp_hackathon_project">Python backend</a>.
                         The Python backend is running a microframework called flask. I chose Flask because I felt it was
                         much quicker to learn and it is crazy customizable. It gave me the freedom to do everything I needed.
                         The Flask application serves my <a href="https://github.com/Minerest/watchout_frontend">React App</a>.
-                        It also acts as the API sending the relevant crime data retrieved with AJAX calls and Promises.
+                    </p>
+                    <p className="rez_paragraph" id="right_rez">The Flask backend acts as the API for the React frontend
+                        sending the relevant crime data retrieved with AJAX calls and Promises.
                         The flask app makes a request to a MySQL database based on GPS coordinates and retrieves the
                         relevant crime data. That data is then turned into a JSON string and passed to the AJAX request.
                         The AJAX request then turns the JSON string and turns it into a javascript object. It is then interpreted
