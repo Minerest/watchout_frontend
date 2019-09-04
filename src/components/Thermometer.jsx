@@ -1,5 +1,7 @@
 import React from "react";
 import { Component } from 'react';
+import { Spring } from 'react-spring/renderprops';
+
 
 export class Thermometer extends Component {
 
@@ -9,6 +11,8 @@ export class Thermometer extends Component {
         this.state = {
             top: 0,
             height: 0,
+            prev_height: 0,
+            prev_top: 0,
             danger_rating: 0
         }
     }
@@ -17,15 +21,17 @@ export class Thermometer extends Component {
         let danger_rating = dr;
         let height_offset = 100 - danger_rating;
         let stylez = {
-            top: height_offset+"%",
-            height: danger_rating+"%"
+            top: height_offset + "%",
+            height: danger_rating + "%"
         };
+
         this.setState({
+            prev_height: this.state.height,
+            prev_top: this.state.top,
             top: stylez.top,
             height: stylez.height,
             danger_rating: dr
         });
-
     }
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {

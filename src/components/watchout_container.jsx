@@ -19,17 +19,28 @@ export class WatchoutContainer extends Component {
             Date: "",
             Coords: "",
             should_banner_load: false,
-            first_load: true
+            first_load: true,
+            danger_rating: {
+                last: 0,
+                cur: 0
+            },
+            crime_stats: {
+                assault: 0,
+                murder: 0,
+                theft: 0,
+                robbery: 0,
+                other: 0
+            },
+            last_crime_stats: {
+                assault: 0,
+                murder: 0,
+                theft: 0,
+                robbery: 0,
+                other: 0
+            }
         };
 
-        this.state.crime_stats = {
-            assault: 0,
-            murder: 0,
-            theft: 0,
-            robbery: 0,
-            other: 0
-        };
-        this.state.danger_rating = 0;
+
         this.update_dataview = this.update_dataview.bind(this);
         this.get_danger_rating = this.get_danger_rating.bind(this);
         this.update_banner = this.update_banner.bind(this);
@@ -39,11 +50,12 @@ export class WatchoutContainer extends Component {
     banner_timeout(){
 
         if (this.state.should_banner_load){
-            this.setState({first_load: false});
+            //this.setState({first_load: false});
             setInterval(() => {
                 let n = Math.floor(Math.random() * this.state.resp_for_banner.length);
                 let obj = this.state.resp_for_banner[n];
                 console.log(obj);
+                console.log("HERE");
                 this.setState({
                     Date: obj.date,
                     Coords: obj.latitude + ", " + obj.longitude,
@@ -69,12 +81,18 @@ export class WatchoutContainer extends Component {
         if (danger_rating > 100){
             danger_rating = 100;
         }
-        this.setState({danger_rating: danger_rating});
+        this.setState({
+            last_danger_rating: this.state.danger_rating,
+            danger_rating: danger_rating
+        });
 
     }
 
     update_dataview = data => {
-        this.setState({crime_stats : data});
+        this.setState({
+            last_crime_stats: this.state.crime_stats,
+            crime_stats : data
+        });
         this.calc_danger_rating();
     };
 
@@ -101,11 +119,13 @@ export class WatchoutContainer extends Component {
     };
 
     render(){
+        let custom_configs = config.gentle
+        custom_configs.duration = 450;
         return(
            <Spring
-               from={{opacity:0, marginTop:-1500}} to={{opacity:1, marginTop:0}}
-               config={config.wobbly}
-               >
+               from={{opacity:0, marginTop:500}} to={{opacity:1, marginTop:0}}
+               config={custom_configs}
+           >
                {props =>
                    <div className="master_container" style={props}>
                        <div className="watchout"><Watchout/></div>
@@ -113,7 +133,7 @@ export class WatchoutContainer extends Component {
                        <div className="that_div">
                            <div>
                                <div className="data">
-                                   <DataView d={this.state.crime_stats} amount_of_entries="3"/>
+                                   <DataView last_d={this.state.last_crime_stats} d={this.state.crime_stats} amount_of_entries="3"/>
                                </div>
                                <div className="thermodiv">
                                    <Thermometer danger_rating={this.state.danger_rating}/>

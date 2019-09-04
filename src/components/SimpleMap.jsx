@@ -70,7 +70,6 @@ export class SimpleMap extends Component {
         fetch(main_db_url).then((res) => {
             return res.json()
         }).then( (r) => {
-            console.log(r);
             this.props.update_banner(r);
         })
     }

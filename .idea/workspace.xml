@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/react.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RezContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RezContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DataView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DataView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SimpleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Thermometer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thermometer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/watchout_container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/watchout_container.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,35 +22,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>500</find>
-      <find>maps_</find>
-      <find>abso</find>
-      <find>flex</find>
-      <find>master</find>
-      <find>input_</find>
-      <find>maps</find>
-      <find>width</find>
-      <find>color</find>
-      <find>border</find>
-      <find>res</find>
-      <find>conso</find>
-      <find>clear</find>
-      <find>cons</find>
-      <find>bind</find>
-      <find>margin</find>
-      <find>console.l</find>
-      <find>next</find>
-      <find>console.log</find>
-      <find>filling</find>
-      <find>console.</find>
-      <find>onc</find>
-      <find>onclick</find>
-      <find>300</find>
-      <find>banner</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -176,6 +150,8 @@
       <workItem from="1566747052260" duration="61000" />
       <workItem from="1566747142205" duration="4323000" />
       <workItem from="1566956662226" duration="1831000" />
+      <workItem from="1567545354366" duration="284000" />
+      <workItem from="1567558490988" duration="2605000" />
     </task>
     <servers />
   </component>
