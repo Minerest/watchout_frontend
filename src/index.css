@@ -110,6 +110,18 @@
     }
 }
 
+@media(min-width: 720px){
+    #resume_container {
+        margin-left: 25%;
+        width: 50%;
+        font-size: 1.5rem;
+
+    }
+    #resume_container a {
+        text-decoration: none;
+        color: yellow;
+    }
+}
 
 @media(max-width: 1000px){
     .maps_container {

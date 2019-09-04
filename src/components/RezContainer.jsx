@@ -14,11 +14,10 @@ export class RezContainer extends Component {
             <div id='resume_container'>
                 <h1>Hi, I'm Eric.</h1>
                 <div id='how_its_made'>
-                    <h1>How this site was made</h1>
+                    <h1>How was this site was made?</h1>
                 </div>
                 <div id='the_server'>
-                    <h2>The Server</h2>
-                    <p> I have a laptop that's running Ubuntu 18.04 as the server for this React application.
+                    <p id="rez_paragraph"> I have a laptop that's running Ubuntu 18.04 as the server for this React application.
                         It's currently using <a href="https://www.nginx.com/">NGINX</a> to run the Web Server listening on Port 80 and 443.
                         NGINX communicates with a Python WSGI HTTP Server called <a href="https://gunicorn.org/">GUINICORN</a> listening on an internal web socket.
                         That web socket communicates with my <a href="https://github.com/Minerest/gcp_hackathon_project">Python backend</a>.
@@ -36,8 +35,8 @@ export class RezContainer extends Component {
                         Now, it runs my pride and joy.</p>
                 </div>
                 <div id='buttons'>
-                    <button onClick={this.props.back_to_main}>Lolwut?</button>
-                    <button onClick={this.props.start_the_show}>Oh, is that what that was?</button>
+                    <button onClick={this.props.back_to_main}>Back to the index</button>
+                    <button onClick={this.props.start_the_show}>The Watchout! App</button>
                 </div>
 
             </div>

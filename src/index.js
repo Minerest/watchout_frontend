@@ -51,8 +51,8 @@ class App extends Component {
 			return (
 				<div>
 					<h1>Hi! Welcome to my app</h1>
-					<button onClick={this.start_the_show}>Show me the money</button>
-					<button onClick={this.but_that_rez_tho}>But what's good with that Rez tho?</button>
+					<button onClick={this.start_the_show}>The Watchout! App</button>
+					<button onClick={this.but_that_rez_tho}>But how is this made?</button>
 				</div>
 			)
 		}
