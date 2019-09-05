@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from 'react';
-import { Spring } from 'react-spring/renderprops';
+import { Spring, config } from 'react-spring/renderprops';
 
 
 export class Thermometer extends Component {
@@ -18,11 +18,15 @@ export class Thermometer extends Component {
     }
 
     change_filling(dr){
-        let danger_rating = dr;
-        let height_offset = 100 - danger_rating;
+        if (isNaN(dr)){
+            return;
+        }
+        let height_offset = 1/100 * (100 - dr); // convert to percentage
+        height_offset *= 155  // relate it to height of thermometer
+        let top_style = 155 - height_offset // remainder
         let stylez = {
-            top: height_offset + "%",
-            height: danger_rating + "%"
+            top: height_offset,
+            height: top_style
         };
 
         this.setState({
@@ -44,11 +48,25 @@ export class Thermometer extends Component {
 
 
     render() {
+        if (this.state.prev_top === this.state.top && this.state.prev_height === this.state.height){
+            return (
+                <div className="thermometer">
+                    <div style={{"height": this.state.height, "top": this.state.top}} />
+                </div>
+            )
+        }
         return (
-            <div className="thermometer">
-                <div style={{"height": this.state.height, "top": this.state.top }} className="filling"/>
-                <div className="thermobulb" />
-            </div>
+            <Spring from={{top: this.state.prev_top, height: this.state.prev_height}}
+                    to={{top: this.state.top, height: this.state.height}}
+                    config={config.molasses}>
+                {props => (
+                <div className="thermometer">
+                    <div className="filling" style={{"height": props.height + "px", "top": props.top + "px"}}/>
+                    <div className="thermobulb" />
+                </div>
+                )}
+            </Spring>
+
         )
     }
 }

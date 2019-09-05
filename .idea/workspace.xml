@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="">
+    <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="Added a smoother change of crime stats from previous to next states.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DataView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DataView.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RezContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RezContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Thermometer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thermometer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/watchout_container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/watchout_container.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,6 +149,7 @@
       <workItem from="1567558490988" duration="2605000" />
       <workItem from="1567626630921" duration="938000" />
       <workItem from="1567628205772" duration="1021000" />
+      <workItem from="1567721087662" duration="4079000" />
     </task>
     <servers />
   </component>

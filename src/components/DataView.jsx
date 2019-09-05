@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from 'react';
-import { Spring, config } from 'react-spring/renderprops';
+import { Spring } from 'react-spring/renderprops';
 
 export class DataView extends Component {
 

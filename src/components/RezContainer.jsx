@@ -5,9 +5,6 @@ import { Spring, config } from 'react-spring/renderprops';
 
 export class RezContainer extends Component {
     // The master container for the Resume Page.
-    constructor(props){
-        super(props);
-    }
 
     render(){
         return(

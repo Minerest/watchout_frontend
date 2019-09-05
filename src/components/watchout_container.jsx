@@ -40,7 +40,6 @@ export class WatchoutContainer extends Component {
             }
         };
 
-
         this.update_dataview = this.update_dataview.bind(this);
         this.get_danger_rating = this.get_danger_rating.bind(this);
         this.update_banner = this.update_banner.bind(this);
