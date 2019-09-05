@@ -14,7 +14,7 @@ export class SimpleMap extends Component {
             zoom: 11,
             width: 0,
             height: 0,
-            f : null
+            timeout_id : null
         };
         this.updateSizes = this.updateSizes.bind(this);
         this.wrapper = this.wrapper.bind(this);
@@ -24,13 +24,12 @@ export class SimpleMap extends Component {
     componentDidMount() {
         this.wrapper();
         window.addEventListener("resize", this.wrapper);
-
     }
 
 
     wrapper(){
-        window.clearTimeout(this.f);
-        this.f = window.setTimeout(this.updateSizes, 200);
+        window.clearTimeout(this.state.timeout_id);
+        this.state.timeout_id = window.setTimeout(this.updateSizes, 200);
     }
 
     updateSizes(){
@@ -75,9 +74,6 @@ export class SimpleMap extends Component {
     }
 
     _onClick = ({x, y, lat, lng, event}) => this.getData(lat,lng);
-
-
-
 
     render() {
 

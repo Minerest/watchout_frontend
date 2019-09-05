@@ -14,12 +14,10 @@ export class WatchoutContainer extends Component {
         this.state = {
             side_div: "20%",
             f: null,
-            Description: "Loading...",
+            description: "",
             resp_for_banner: "",
             Date: "",
             Coords: "",
-            should_banner_load: false,
-            first_load: true,
             danger_rating: {
                 last: 0,
                 cur: 0
@@ -44,17 +42,17 @@ export class WatchoutContainer extends Component {
         this.get_danger_rating = this.get_danger_rating.bind(this);
         this.update_banner = this.update_banner.bind(this);
         this.banner_wrapper = this.banner_wrapper.bind(this);
+        this.should_banner_load = true;
     }
 
     banner_timeout(){
 
-        if (this.state.should_banner_load){
-            //this.setState({first_load: false});
+        if (this.should_banner_load){
+            this.should_banner_load = false;
+            console.log(this.should_banner_load);
             setInterval(() => {
                 let n = Math.floor(Math.random() * this.state.resp_for_banner.length);
                 let obj = this.state.resp_for_banner[n];
-                console.log(obj);
-                console.log("HERE");
                 this.setState({
                     Date: obj.date,
                     Coords: obj.latitude + ", " + obj.longitude,
@@ -97,22 +95,13 @@ export class WatchoutContainer extends Component {
 
     banner_wrapper(res){
         this.setState({
-            resp_for_banner: res
+            resp_for_banner: res,
         });
     }
 
     update_banner = (res) => {
 
         this.banner_wrapper(res);
-        if (this.state.first_load){
-            return;
-        }
-
-        this.setState({
-            should_banner_load: true,
-            first_load: true
-        });
-
         this.banner_timeout();
 
     };
