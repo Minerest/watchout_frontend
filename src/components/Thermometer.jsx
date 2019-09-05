@@ -9,7 +9,7 @@ export class Thermometer extends Component {
         super(props);
         this.change_filling = this.change_filling.bind(this);
         this.state = {
-            top: 0,
+            top: 155,
             height: 0,
             prev_height: 0,
             prev_top: 0,
