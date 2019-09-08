@@ -11,6 +11,11 @@
     position: relative;
 }
 
+.watchout h1 {
+    font-size: 5em;
+}
+
+
 .left_items {
 
     display: inline-block;

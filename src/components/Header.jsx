@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from 'react';
-import {Trail} from 'react-spring/renderprops'
+import {Trail, config} from 'react-spring/renderprops'
 
 export class Watchout extends Component {
 
@@ -35,13 +35,16 @@ export class Watchout extends Component {
 
         return(
             <h1>
+                <strong>
                 <Trail items={this.items}
                        keys={item => item.key}
                        from={{opacity:0}}
                        to={{opacity:1}}
+                       config={config.wobbly}
                 >
                     {item => props => <span style={props}> {item.item} </span>}
                 </Trail>
+                </strong>
             </h1>
         );
     }
