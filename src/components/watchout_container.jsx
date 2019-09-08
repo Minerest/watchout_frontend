@@ -42,6 +42,7 @@ export class WatchoutContainer extends Component {
         this.get_danger_rating = this.get_danger_rating.bind(this);
         this.update_banner = this.update_banner.bind(this);
         this.banner_wrapper = this.banner_wrapper.bind(this);
+        this.get_current_position = this.get_current_position.bind(this);
         this.should_banner_load = true;
     }
 
@@ -106,6 +107,19 @@ export class WatchoutContainer extends Component {
 
     };
 
+    get_current_position() {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition( pos => {(
+                console.log(pos.coords.latitude);
+                console.log(pos.coords.longitude);
+            )}
+            )
+        } else {
+            console.log("No geolocation");
+        }
+    }
+
+
     render(){
         let custom_configs = config.gentle
         custom_configs.duration = 450;
@@ -119,6 +133,7 @@ export class WatchoutContainer extends Component {
                    {props =>
                        <div className="master_container" style={props}>
                            <button onClick={this.props.back_to_main}> BACK IT UP!</button>
+                           <button onClick={this.get_current_position}> Get Current Position!</button>
                            <div className="that_div">
                                <div>
                                    <div className="data">
