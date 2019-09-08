@@ -133,6 +133,7 @@ export class WatchoutContainer extends Component {
                            <div className="maps_container">
                                <SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
                                <div id={"banner"}>
+                                   <br />
                                    <p>{this.state.Description}</p>
                                    <p>{this.state.Date}</p>
                                    <p>{this.state.Coords}</p>
