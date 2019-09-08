@@ -152,7 +152,9 @@
         left: 0;
         margin-left: 0;
     }
-
+    .watchout h1 {
+        font-size: 1em;
+    }
 }
 
 #banner p {

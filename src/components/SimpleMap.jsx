@@ -14,11 +14,34 @@ export class SimpleMap extends Component {
             zoom: 11,
             width: 0,
             height: 0,
-            timeout_id : null
+            timeout_id : null,
         };
         this.updateSizes = this.updateSizes.bind(this);
         this.wrapper = this.wrapper.bind(this);
+        this.get_current_position = this.get_current_position.bind(this);
 
+    }
+
+
+    get_current_position() {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition( pos => {
+                this.setState({
+                    center: {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    },
+                    marker_coords: {
+                        lat: pos.coords.latitude,
+                        lng: pos.coords.longitude
+                    }
+                });
+
+            });
+        }
+        else {
+            console.log("No geolocation");
+        }
     }
 
     componentDidMount() {
@@ -80,13 +103,13 @@ export class SimpleMap extends Component {
         return (
             // Important! Always set the container height explicitly
             <div className="react_map" style={{"height": this.state.height, "width": this.state.width}}>
+                <button onClick={this.get_current_position}> Get Current Position!</button>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: "AIzaSyBqHAyz7qbZeKCF_aKujnK0SKff8Pb0s1A" }}
-                    defaultCenter={this.state.center}
+                    center={this.state.center}
                     defaultZoom={this.state.zoom}
                     onClick={(e) => this._onClick(e)}
-                    className="maps_container"
-                >
+                    className="maps_container">
                 </GoogleMapReact>
             </div>
         );
