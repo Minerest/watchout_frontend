@@ -110,36 +110,38 @@ export class WatchoutContainer extends Component {
         let custom_configs = config.gentle
         custom_configs.duration = 450;
         return(
-           <Spring
-               from={{opacity:0, marginTop:500}} to={{opacity:1, marginTop:0}}
-               config={custom_configs}
-           >
-               {props =>
-                   <div className="master_container" style={props}>
-                       <div className="watchout"><Watchout/></div>
-                       <button onClick={this.props.back_to_main}> BACK IT UP!</button>
-                       <div className="that_div">
-                           <div>
-                               <div className="data">
-                                   <DataView last_d={this.state.last_crime_stats} d={this.state.crime_stats} amount_of_entries="3"/>
-                               </div>
-                               <div className="thermodiv">
-                                   <Thermometer danger_rating={this.state.danger_rating}/>
+            <div>
+                <div className="watchout"><Watchout/></div>
+                <Spring
+                   from={{opacity:0, marginTop:500}} to={{opacity:1, marginTop:0}}
+                   config={custom_configs}
+               >
+                   {props =>
+                       <div className="master_container" style={props}>
+                           <button onClick={this.props.back_to_main}> BACK IT UP!</button>
+                           <div className="that_div">
+                               <div>
+                                   <div className="data">
+                                       <DataView last_d={this.state.last_crime_stats} d={this.state.crime_stats} amount_of_entries="3"/>
+                                   </div>
+                                   <div className="thermodiv">
+                                       <Thermometer danger_rating={this.state.danger_rating}/>
+                                   </div>
                                </div>
                            </div>
-                       </div>
 
-                       <div className="maps_container">
-                           <SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
-                           <div id={"banner"}>
-                               <p>{this.state.Description}</p>
-                               <p>{this.state.Date}</p>
-                               <p>{this.state.Coords}</p>
+                           <div className="maps_container">
+                               <SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
+                               <div id={"banner"}>
+                                   <p>{this.state.Description}</p>
+                                   <p>{this.state.Date}</p>
+                                   <p>{this.state.Coords}</p>
+                               </div>
                            </div>
                        </div>
-                   </div>
-               }
+                   }
                </Spring>
+            </div>
         )
     }
 }

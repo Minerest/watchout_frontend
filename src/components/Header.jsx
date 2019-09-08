@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from 'react';
+import {Trail} from 'react-spring/renderprops'
 
 export class Watchout extends Component {
 
@@ -10,31 +11,38 @@ export class Watchout extends Component {
             text: "Watchout!",
             cur_indx: 0
         };
-        this.animate_header = this.animate_header.bind(this);
+        this.items = [
+            {item :"W", key:0},
+            {item:"a", key:1},
+            {item:"t", key:2},
+            {item:"c", key:3},
+            {item:"h", key:4},
+            {item:"o", key:5},
+            {item:"u", key:6},
+            {item:"t", key:7},
+            {item:"!", key:8},
+        ]
+
     }
 
-    componentDidMount() {
-        let interval_id = setInterval(this.animate_header, 150);
-        this.setState({interval_id: interval_id});
-    }
+    // componentDidMount() {
+    //     let interval_id = setInterval(this.animate_header, 150);
+    //     this.setState({interval_id: interval_id});
+    // }
 
-    animate_header(){
-
-        if (this.state.cur_indx < this.state.text.length){
-            let cur_text = this.state.watchout + this.state.text[this.state.cur_indx];
-            this.setState({
-                watchout: cur_text,
-                cur_indx: this.state.cur_indx + 1
-            });
-        }
-        else{
-            clearInterval(this.state.interval_id);
-        }
-    }
 
     render(){
+
         return(
-            <h1>{this.state.watchout}</h1>
+            <h1>
+                <Trail items={this.items}
+                       keys={item => item.key}
+                       from={{opacity:0}}
+                       to={{opacity:1}}
+                >
+                    {item => props => <span style={props}> {item.item} </span>}
+                </Trail>
+            </h1>
         );
     }
 }
