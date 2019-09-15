@@ -4,7 +4,7 @@ import { Component } from 'react';
 import './index.css';
 import { WatchoutContainer } from './components/watchout_container';
 import { RezContainer } from './components/RezContainer';
-
+import { Button} from "@material-ui/core";
 
 class App extends Component {
 
@@ -51,8 +51,8 @@ class App extends Component {
 			return (
 				<div>
 					<h1>Hi! Welcome to my app</h1>
-					<button onClick={this.start_the_show}>The Watchout! App</button>
-					<button onClick={this.but_that_rez_tho}>But how is this made?</button>
+					<Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button>
+					<Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button>
 				</div>
 			)
 		}

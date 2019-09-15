@@ -3,7 +3,7 @@ import { Component } from 'react';
 import './../index.css';
 import {SimpleMap} from "./SimpleMap";
 import {DataView} from "./DataView";
-import {Watchout} from "./Header";
+import {Header} from "./Header";
 import {Thermometer} from "./Thermometer";
 import { Spring, config } from 'react-spring/renderprops';
 
@@ -111,7 +111,7 @@ export class WatchoutContainer extends Component {
         custom_configs.duration = 450;
         return(
             <div>
-                <div className="watchout"><Watchout/></div>
+                <div className="watchout"><Header text="Watchout!"/></div>
                 <Spring
                    from={{opacity:0, marginTop:500}} to={{opacity:1, marginTop:0}}
                    config={custom_configs}
