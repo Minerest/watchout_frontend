@@ -5,6 +5,7 @@ import './index.css';
 import { WatchoutContainer } from './components/watchout_container';
 import { RezContainer } from './components/RezContainer';
 import { Button} from "@material-ui/core";
+import {Header} from "./components/Header";
 
 class App extends Component {
 
@@ -50,7 +51,7 @@ class App extends Component {
 		else{
 			return (
 				<div>
-					<h1>Hi! Welcome to my app</h1>
+					<Header text="Hi! I'm Eric. Welcome!" />
 					<Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button>
 					<Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button>
 				</div>

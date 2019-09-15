@@ -1,7 +1,6 @@
 import React from "react";
 import { Component } from 'react';
 import {Trail, config} from 'react-spring/renderprops'
-
 export class Header extends Component {
 
     constructor(props){
@@ -12,6 +11,12 @@ export class Header extends Component {
                 item: props.text[i],
                 key: i
             });
+        }
+        if (this.props.text.length <= 9){
+            this.configuration = config.wobbly;
+        }
+        else {
+            this.configuration = config.stiff;
         }
     }
 
@@ -24,9 +29,9 @@ export class Header extends Component {
                        keys={item => item.key}
                        from={{opacity:0}}
                        to={{opacity:1}}
-                       config={config.wobbly}
+                       config={this.configuration}
                 >
-                    {item => props => <span style={props}> {item.item} </span>}
+                    {item => props => <span style={props}>{item.item}</span>}
                 </Trail>
                 </strong>
             </h1>
