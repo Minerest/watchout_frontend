@@ -4,6 +4,15 @@
     /*border: khaki 4px solid;*/
     margin-left: 25%;
 }
+.master_container h1 {
+    margin-left: 25%;
+    position: relative;
+}
+
+.main_buttons {
+    margin-left: 23%;
+    position: relative;
+}
 
 .watchout {
     text-align: center;

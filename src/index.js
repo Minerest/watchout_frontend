@@ -50,10 +50,12 @@ class App extends Component {
 		}
 		else{
 			return (
-				<div>
+				<div className="master_container">
 					<Header text="Hi! I'm Eric. Welcome!" />
-					<Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button>
-					<Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button>
+					<div className="main_buttons">
+						<Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button>
+						<Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button>
+					</div>
 				</div>
 			)
 		}
