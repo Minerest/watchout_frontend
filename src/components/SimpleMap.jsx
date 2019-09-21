@@ -1,6 +1,7 @@
 import GoogleMapReact from "google-map-react";
 import React from "react";
 import { Component } from 'react';
+import { Button } from '@material-ui/core';
 
 export class SimpleMap extends Component {
 
@@ -52,7 +53,7 @@ export class SimpleMap extends Component {
 
     wrapper(){
         window.clearTimeout(this.state.timeout_id);
-        this.state.timeout_id = window.setTimeout(this.updateSizes, 200);
+        this.setState({timeout_id: window.setTimeout(this.updateSizes, 200)});
     }
 
     updateSizes(){
@@ -103,7 +104,7 @@ export class SimpleMap extends Component {
         return (
             // Important! Always set the container height explicitly
             <div className="react_map" style={{"height": this.state.height, "width": this.state.width}}>
-                <button onClick={this.get_current_position}> Get Current Position!</button>
+                <Button variant="contained" color="primary" size="medium" onClick={this.get_current_position}> Get Current Position!</Button>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: "AIzaSyBqHAyz7qbZeKCF_aKujnK0SKff8Pb0s1A" }}
                     center={this.state.center}

@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="Added a smoother change of crime stats from previous to next states.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RezContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RezContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SimpleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/watchout_container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/watchout_container.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +155,8 @@
       <workItem from="1568556169248" duration="290000" />
       <workItem from="1568556470932" duration="326000" />
       <workItem from="1568556807907" duration="2735000" />
-      <workItem from="1568925761700" duration="856000" />
+      <workItem from="1568925761700" duration="1050000" />
+      <workItem from="1569074714784" duration="814000" />
     </task>
     <servers />
   </component>
@@ -201,5 +201,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/index.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

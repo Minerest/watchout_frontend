@@ -6,6 +6,7 @@ import {DataView} from "./DataView";
 import {Header} from "./Header";
 import {Thermometer} from "./Thermometer";
 import { Spring, config } from 'react-spring/renderprops';
+import {Button} from "@material-ui/core";
 
 export class WatchoutContainer extends Component {
 
@@ -113,12 +114,11 @@ export class WatchoutContainer extends Component {
             <div>
                 <div className="watchout"><Header text="Watchout!"/></div>
                 <Spring
-                   from={{opacity:0, marginTop:500}} to={{opacity:1, marginTop:0}}
-                   config={custom_configs}
-               >
+                   from={{opacity:0, marginTop:0}} to={{opacity:1, marginTop:0}}
+                   config={config.slow}>
                    {props =>
                        <div className="master_container" style={props}>
-                           <button onClick={this.props.back_to_main}> BACK IT UP!</button>
+                           <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}> BACK IT UP!</Button>
                            <div className="that_div">
                                <div>
                                    <div className="data">
