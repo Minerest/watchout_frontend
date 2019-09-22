@@ -118,7 +118,7 @@ export class WatchoutContainer extends Component {
                    config={config.slow}>
                    {props =>
                        <div className="master_container" style={props}>
-                           <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}> BACK IT UP!</Button>
+                           <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button>
                            <div className="that_div">
                                <div>
                                    <div className="data">

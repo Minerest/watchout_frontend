@@ -115,6 +115,10 @@
 
 }
 
+.rez_header {
+    text-align: center;
+}
+
 #resume_container a {
     text-decoration: none;
     color: yellow;
