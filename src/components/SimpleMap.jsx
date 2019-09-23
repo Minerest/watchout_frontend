@@ -20,7 +20,7 @@ export class SimpleMap extends Component {
         this.updateSizes = this.updateSizes.bind(this);
         this.wrapper = this.wrapper.bind(this);
         this.get_current_position = this.get_current_position.bind(this);
-
+        this.is_maindb_loading = false;
     }
 
 
@@ -88,13 +88,15 @@ export class SimpleMap extends Component {
             this.props.update(re);
         }.bind(this));
 
-
-
-        fetch(main_db_url).then((res) => {
-            return res.json()
-        }).then( (r) => {
-            this.props.update_banner(r);
-        })
+        if (!this.is_maindb_loading) {
+            fetch(main_db_url).then((res) => {
+                this.is_maindb_loading = true;
+                return res.json()
+            }).then((r) => {
+                this.is_maindb_loading = false;
+                this.props.update_banner(r);
+            })
+        }
     }
 
     _onClick = ({x, y, lat, lng, event}) => this.getData(lat,lng);
