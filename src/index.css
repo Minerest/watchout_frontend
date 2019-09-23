@@ -29,6 +29,7 @@
     display: inline-block;
     float:left;
     text-align: right;
+    margin-left: 40px;
 }
 
 .right_items {
