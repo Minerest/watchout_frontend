@@ -89,8 +89,8 @@ export class SimpleMap extends Component {
         }.bind(this));
 
         if (!this.is_maindb_loading) {
+            this.is_maindb_loading = true;
             fetch(main_db_url).then((res) => {
-                this.is_maindb_loading = true;
                 return res.json()
             }).then((r) => {
                 this.is_maindb_loading = false;
