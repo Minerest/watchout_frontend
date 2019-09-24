@@ -15,6 +15,10 @@ export class RezContainer extends Component {
                 <Spring from={{opacity:0}} to={{opacity:1}} config={config.slow}>
                     {props =>
                     <div id='resume_container' style={props}>
+                        <span className="home_button">
+                            <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button>
+                        </span>
+                        <Button variant="contained" color="primary" size="medium" onClick={this.props.start_the_show}>The Watchout! App</Button>
                         <div id='how_its_made'>
                             <p className="rez_paragraph" id="left_rez"> I have a laptop that's running Ubuntu 18.04
                                 as the server for this React application. It's currently using <a href="https://www.nginx.com/">NGINX</a>
@@ -84,7 +88,7 @@ export class RezContainer extends Component {
                             </div>
                         </div>
                         <div id='buttons'>
-                            <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button>
+                            <span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button></span>
                             <Button variant="contained" color="primary" size="medium" onClick={this.props.start_the_show}>The Watchout! App</Button>
                         </div>
                     </div>}

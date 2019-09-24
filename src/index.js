@@ -53,7 +53,7 @@ class App extends Component {
 				<div className="master_container">
 					<Header text="Hi! I'm Eric. Welcome!" />
 					<div className="main_buttons">
-						<Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button>
+						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button></span>
 						<Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button>
 					</div>
 				</div>

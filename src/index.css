@@ -162,18 +162,29 @@
         left: 0;
         height: 100%;
     }
+    .master_container h1 {
+        margin-left: 20%;
+    }
     .input_box {
         width: 100%;
         left: 0;
         margin-left: 0;
     }
     .watchout h1 {
-        font-size: 1em;
+        font-size: 2em;
+    }
+    .main_buttons {
+        margin-left: 15%;
+        position: relative;
     }
 }
 
 #banner {
     margin-top: 20px;
+}
+
+.home_button {
+    margin-right: 20px;
 }
 
 #banner p {
