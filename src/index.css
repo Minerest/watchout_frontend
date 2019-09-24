@@ -172,6 +172,10 @@
     }
 }
 
+#banner {
+    margin-top: 20px;
+}
+
 #banner p {
     display: inline;
     padding: 20px;
