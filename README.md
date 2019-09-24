@@ -5,6 +5,7 @@ Most of the relevant code is stored under /src/components/*
 Eventually, I'll have another directory for each applette I create.
 
 ## The way it works!
+### https://www.ericdiaz.dev
 Currently, there are 2 buttons on the home page. 1 button takes you to the writeup of how the app was built and the origin story of the app.
 The second button takes you to the app itself.
 On the app, the map defaults to Los Angeles which is the closest place I have data saved on the server closest to my house.
