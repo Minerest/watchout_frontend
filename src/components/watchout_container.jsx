@@ -1,12 +1,14 @@
 import React from "react";
 import { Component } from 'react';
 import './../index.css';
-import {SimpleMap} from "./SimpleMap";
+import {OLMap} from "./SimpleMap";
 import {DataView} from "./DataView";
 import {Header} from "./Header";
 import {Thermometer} from "./Thermometer";
+import { WatchoutBanner } from "./watchout_banner";
 import { Spring, config } from 'react-spring/renderprops';
 import {Button} from "@material-ui/core";
+
 
 export class WatchoutContainer extends Component {
 
@@ -39,9 +41,9 @@ export class WatchoutContainer extends Component {
             }
         };
 
-        this.update_dataview = this.update_dataview.bind(this);
+        // this.update_dataview = this.update_dataview.bind(this);
         this.get_danger_rating = this.get_danger_rating.bind(this);
-        this.update_banner = this.update_banner.bind(this);
+        // this.update_banner = this.update_banner.bind(this);
         this.banner_wrapper = this.banner_wrapper.bind(this);
         this.should_banner_load = true;
     }
@@ -130,14 +132,11 @@ export class WatchoutContainer extends Component {
                                </div>
                            </div>
 
-                           <div className="maps_container">
-                               <SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>
-                               <div id={"banner"}>
-                                   <br />
-                                   <p>{this.state.Description}</p>
-                                   <p>{this.state.Date}</p>
-                                   <p>{this.state.Coords}</p>
-                               </div>
+                       <div className="maps_container">
+                        <OLMap update={this.update_dataview} update_banner={this.update_banner}/>
+                           {/*<SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>*/}
+            <WatchoutBanner desc={this.state.Description} date={this.state.Date}
+coords={this.state.Coords}/>
                            </div>
                        </div>
                    }
