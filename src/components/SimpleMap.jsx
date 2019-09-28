@@ -20,9 +20,10 @@ export class OLMap extends React.Component{
             target: 'map',
             layers: [
                 new TileLayer({
-                    source: new OSM()
+                    source: new OSM("Simple OSM Map")
                 })
             ],
+            controls: [],
             view: new View({
                 projection: 'EPSG:4326',    //The library defaults to some weird X,Y coordinate system. This forces our normal Lat/Lon system.
                 center: this.state.center,

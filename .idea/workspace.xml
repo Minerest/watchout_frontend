@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="Added a smoother change of crime stats from previous to next states.">
-      <change afterPath="$PROJECT_DIR$/src/components/watchout_banner.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SimpleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SimpleMap.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/watchout_container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/watchout_container.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +164,7 @@
       <workItem from="1569544851953" duration="2220000" />
       <workItem from="1569549911728" duration="2475000" />
       <workItem from="1569613862537" duration="1544000" />
-      <workItem from="1569631376384" duration="1402000" />
+      <workItem from="1569631376384" duration="1924000" />
     </task>
     <servers />
   </component>
