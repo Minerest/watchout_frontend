@@ -3,14 +3,24 @@ import { Component } from 'react';
 import { Spring, config } from 'react-spring/renderprops';
 import { Button } from "@material-ui/core";
 import { Header} from "./Header";
+import avatar from "../avatar.png";
 
 export class RezContainer extends Component {
     // The master container for the Resume Page.
     render(){
         return(
             <div>
-                <div className="rez_header">
-                    <Header text="The Watchout! Writeup" />
+                {/*<div className="rez_header">*/}
+                {/*</div>*/}
+                <div id="avatar_div">
+                    <div className="rez_header"><Header text="The Watchout! Writeup" /> </div>
+                    <Spring from={{opacity:0}} to={{opacity:1}} config={config.slow}>
+                        {props => (
+                         <div id="avatar_frame">
+                            <img alt="avatar" src={avatar} style={props} id="avatar"/>
+                         </div>
+                        )}
+                    </Spring>
                 </div>
                 <Spring from={{opacity:0}} to={{opacity:1}} config={config.slow}>
                     {props =>
@@ -21,8 +31,9 @@ export class RezContainer extends Component {
                         <Button variant="contained" color="primary" size="medium" onClick={this.props.start_the_show}>The Watchout! App</Button>
                         <div id='how_its_made'>
                             <p className="rez_paragraph" id="left_rez"> I have a laptop that's running Ubuntu 18.04
-                                as the server for this React application. It's currently using <a href="https://www.nginx.com/">NGINX</a>
-                                to run the Web Server. NGINX is a Web Server that communicates with a Python Gateway
+                                as the server for this React application. It's currently
+                                using <a href="https://www.nginx.com/">NGINX</a> to run the Web Server.
+                                NGINX is a Web Server that communicates with a Python Gateway
                                 called <a href="https://gunicorn.org/">GUINICORN</a> listening on an internal web socket.
                                 That web socket communicates with my <a href="https://github.com/Minerest/gcp_hackathon_project">Python backend</a>.
                                 The Python backend is running a microframework called flask.
@@ -92,8 +103,8 @@ export class RezContainer extends Component {
                             <Button variant="contained" color="primary" size="medium" onClick={this.props.start_the_show}>The Watchout! App</Button>
                         </div>
                     </div>}
-            </Spring>
-        </div>
+                </Spring>
+            </div>
         );
     }
 }
