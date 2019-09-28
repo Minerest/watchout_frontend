@@ -189,6 +189,8 @@
     }
     #avatar_div{
         margin-bottom: 200px;
+        width: 80%;
+        margin-left: 10%;
     }
     .maps_container {
         left: 0;

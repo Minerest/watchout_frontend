@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="Added a smoother change of crime stats from previous to next states.">
-      <change afterPath="$PROJECT_DIR$/src/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/avatar_original.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RezContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RezContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -174,7 +171,7 @@
       <workItem from="1569613862537" duration="1544000" />
       <workItem from="1569631376384" duration="2483000" />
       <workItem from="1569638341243" duration="2516000" />
-      <workItem from="1569687154876" duration="4407000" />
+      <workItem from="1569687154876" duration="5092000" />
     </task>
     <servers />
   </component>
