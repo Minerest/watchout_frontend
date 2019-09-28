@@ -8,16 +8,24 @@ import OSM from "ol/source/OSM";
 export class OLMap extends React.Component{
     constructor(props){
         super(props);
+        let sizes = this.getSizes();
+        let width = sizes[0];
+        let height = sizes[1];
         this.state = {
             center: [-118.2408, 34.0448],
-            zoom: 12
+            zoom: 12,
+            width: width,
+            height: height
         };
         this.timeout_id = null;
         this.is_maindb_loading = false;
         this.get_current_position = this.get_current_position.bind(this);
+        this.wrapper = this.wrapper.bind(this);
+        this.updateSizes = this.updateSizes.bind(this);
     }
 
     componentDidMount(){
+        window.addEventListener("resize", this.wrapper);
         this.map = new Map({
             target: 'map',
             layers: [
@@ -35,6 +43,35 @@ export class OLMap extends React.Component{
         this.map.on("click", (event) => {
             this.getData(event.coordinate[0], event.coordinate[1]); //But of course Lat/Lon is returned backwards when it gets to me.
         });
+        this.updateSizes();
+    }
+
+    getSizes(){
+        let window_width = window.innerWidth;
+        let window_height = window.innerHeight;
+        let width;
+        let height;
+        if (window_width > 1000){
+            width = window_width / 2;
+            height = window_height / 2;
+        }
+        else{
+            width = (9/10) * window_width;
+            height = window_height / 2;
+        }
+        return [width, height];
+    }
+
+    updateSizes(){
+        let sizes = this.getSizes();
+        let width = sizes[0];
+        let height = sizes[1];
+        this.setState({width: width, height: height});
+    }
+
+    wrapper(){
+        window.clearTimeout(this.timeout_id);
+        this.setState({timeout_id: window.setTimeout(this.updateSizes, 200)});
     }
 
     getData(lng, lat){
@@ -84,78 +121,8 @@ export class OLMap extends React.Component{
         return(
             <div>
                 <Button variant="contained" color="primary" size="medium" onClick={this.get_current_position}> Get Current Position!</Button>
-                <div id="map" style={{"height":"400px", "width":"400px"}}/>
+                <div id="map" style={{"height":this.state.height, "width": this.state.width}}/>
             </div>
         )
     }
 }
-
-
-
-// export class SimpleMap extends Component {
-//
-//     constructor(props){
-//         super(props);
-//         this.state = {
-//             center: {
-//                 lat: 34.0448,
-//                 lng: -118.2408
-//             },
-//             zoom: 11,
-//             width: 0,
-//             height: 0,
-//             timeout_id : null,
-//         };
-//         this.updateSizes = this.updateSizes.bind(this);
-//         this.wrapper = this.wrapper.bind(this);
-//         this.get_current_position = this.get_current_position.bind(this);
-//         this.is_maindb_loading = false;
-//     }
-//
-//     componentDidMount() {
-//         this.wrapper();
-//         window.addEventListener("resize", this.wrapper);
-//     }
-//
-//
-//     wrapper(){
-//         window.clearTimeout(this.state.timeout_id);
-//         this.setState({timeout_id: window.setTimeout(this.updateSizes, 200)});
-//     }
-//
-//     updateSizes(){
-//         let window_width = window.innerWidth;
-//         let window_height = window.innerHeight;
-//         let width;
-//         let height;
-//         if (window_width > 1000){
-//             width = window_width / 2;
-//             height = window_height / 2;
-//         }
-//         else{
-//             width = (9/10) * window_width;
-//             height = window_height / 2;
-//         }
-//
-//         this.setState({width: width, height: height});
-//     }
-//
-//     _onClick = ({x, y, lat, lng, event}) => this.getData(lat,lng);
-//
-//     render() {
-//
-//         return (
-//             // Important! Always set the container height explicitly
-//             <div className="react_map" style={{"height": this.state.height, "width": this.state.width}}>
-//                 <Button variant="contained" color="primary" size="medium" onClick={this.get_current_position}> Get Current Position!</Button>
-//                 <GoogleMapReact
-//                     bootstrapURLKeys={{ key: "AIzaSyBqHAyz7qbZeKCF_aKujnK0SKff8Pb0s1A" }}
-//                     center={this.state.center}
-//                     defaultZoom={this.state.zoom}
-//                     onClick={(e) => this._onClick(e)}
-//                     className="maps_container">
-//                 </GoogleMapReact>
-//             </div>
-//         );
-//     }
-// }
