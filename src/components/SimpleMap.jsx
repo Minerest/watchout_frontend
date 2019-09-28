@@ -14,7 +14,9 @@ export class OLMap extends React.Component{
         };
         this.timeout_id = null;
         this.is_maindb_loading = false;
+        this.get_current_position = this.get_current_position.bind(this);
     }
+
     componentDidMount(){
         this.map = new Map({
             target: 'map',
@@ -66,17 +68,10 @@ export class OLMap extends React.Component{
     get_current_position() {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition( pos => {
-                this.setState({
-                    center: {
-                        lat: pos.coords.latitude,
-                        lng: pos.coords.longitude
-                    },
-                    marker_coords: {
-                        lat: pos.coords.latitude,
-                        lng: pos.coords.longitude
-                    }
-                });
-
+                const lat = pos.coords.latitude;
+                const lon = pos.coords.longitude;
+                let view = this.map.getView();
+                view.setCenter([lon, lat]);
             });
         }
         else {
