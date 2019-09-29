@@ -114,13 +114,12 @@ export class WatchoutContainer extends Component {
         custom_configs.duration = 450;
         return(
             <div>
-                <div className="watchout"><Header text="Watchout!"/></div>
+                <span className="watchout"><Header text="Watchout!"/></span>
                 <Spring
                    from={{opacity:0, marginTop:0}} to={{opacity:1, marginTop:0}}
                    config={config.slow}>
                    {props =>
                        <div className="master_container" style={props}>
-                           <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button>
                            <div className="that_div">
                                <div>
                                    <div className="data">
@@ -131,12 +130,11 @@ export class WatchoutContainer extends Component {
                                    </div>
                                </div>
                            </div>
-
-                       <div className="maps_container">
-                        <OLMap update={this.update_dataview} update_banner={this.update_banner}/>
-                           {/*<SimpleMap update={this.update_dataview} update_banner={this.update_banner}/>*/}
-            <WatchoutBanner desc={this.state.Description} date={this.state.Date}
-coords={this.state.Coords}/>
+                           <div className="maps_container">
+                               <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button>
+                               <OLMap update={this.update_dataview} update_banner={this.update_banner}/>
+                            <WatchoutBanner desc={this.state.Description} date={this.state.Date}
+                                            coords={this.state.Coords}/>
                            </div>
                        </div>
                    }

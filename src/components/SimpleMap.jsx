@@ -51,13 +51,13 @@ export class OLMap extends React.Component{
         let window_height = window.innerHeight;
         let width;
         let height;
-        if (window_width > 1000){
+        if (window_width > 780){
             width = window_width / 2;
             height = window_height / 2;
         }
         else{
             width = (9/10) * window_width;
-            height = window_height / 2;
+            height = window_height / 3;
         }
         return [width, height];
     }

@@ -40,7 +40,8 @@
 }
 
 .maps_container {
-    margin-top: 5%;
+    margin-top: 0%;
+    position: relative;
 }
 
 
@@ -79,7 +80,7 @@
 .that_div {
     width: 100%;
     /*border: chartreuse 20px solid;*/
-    height: 270px;
+    height: 30%;
     display: inline-block;
     position: relative;
     background-color: black;
@@ -195,7 +196,7 @@
     .maps_container {
         left: 0;
         margin-left: 5%;
-        margin-top: 15%;
+        margin-top: 5%;
         position: absolute;
     }
     .master_container{
@@ -233,7 +234,7 @@
 
 #banner p {
     display: inline;
-    padding: 20px;
+    padding: 10px;
     font-size: 20px;
 }
 
