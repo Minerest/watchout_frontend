@@ -121,6 +121,7 @@ export class OLMap extends React.Component{
         return(
             <div>
                 <Button variant="contained" color="primary" size="medium" onClick={this.get_current_position}> Get Current Position!</Button>
+                <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button>
                 <div id="map" style={{"height":this.state.height, "width": this.state.width}}/>
             </div>
         )

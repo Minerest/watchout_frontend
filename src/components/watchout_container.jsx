@@ -131,8 +131,7 @@ export class WatchoutContainer extends Component {
                                </div>
                            </div>
                            <div className="maps_container">
-                               <Button variant="contained" color="primary" size="medium" onClick={this.props.back_to_main}>HOME</Button>
-                               <OLMap update={this.update_dataview} update_banner={this.update_banner}/>
+                               <OLMap update={this.update_dataview} back_to_main={this.props.back_to_main} update_banner={this.update_banner}/>
                             <WatchoutBanner desc={this.state.Description} date={this.state.Date}
                                             coords={this.state.Coords}/>
                            </div>
