@@ -28,7 +28,7 @@ export function SpaceX (props) {
         return (
             <div onClick={props.back_to_main}>
                 {data.launchesPast.map(launch => (
-                    <div> {launch.mission_name} </div>
+                    <div key={launch.id}> {launch.mission_name} </div>
                 ))}
             </div>
         )

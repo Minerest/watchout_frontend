@@ -21,7 +21,7 @@ class App extends Component {
 		}
 
 		this.client = new ApolloClient({
-			uri: "http://api.spacex.land/graphql"
+			uri: "//api.spacex.land/graphql"
 		})
 
 		this.start_the_show = this.start_the_show.bind(this);
