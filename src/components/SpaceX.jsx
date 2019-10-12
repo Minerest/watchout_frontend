@@ -7,10 +7,7 @@ import { ApolloProvider, useQuery } from "@apollo/react-hooks";
 const GET_DATA = gql`{
                 launchesPast(limit: 10) {
                     mission_name
-                    launch_date_local
-                    launch_site {
-                        site_name_long
-                    }
+                    details
                     links {
                         video_link
                         flickr_images
@@ -25,8 +22,8 @@ export function SpaceX (props) {
         return <p>Loading</p>
     } else {
         return (
-            <div onClick={props.back_to_main} className="spacex_container">
-                {data.launchesPast.map(launch => <SpaceXCard launch={launch} key={launch.mission_name}/>)}
+            <div  className="spacex_container">
+                { data.launchesPast.map( launch => <SpaceXCard launch={ launch } key={ launch.mission_name }/> ) }
             </div>
         )
     }

@@ -180,13 +180,15 @@
 
 .spacex_card {
     flex: 1;
-    height: 480px;
-    width: 480px;
 }
 
 .spacex_card img {
     height: 480px;
     width: 480px;
+}
+
+.spacex_card p {
+    width: 480px
 }
 
 @media(min-width: 720px){
