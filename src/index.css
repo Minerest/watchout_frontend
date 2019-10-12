@@ -173,6 +173,22 @@
     font-size: 1.2rem;
 }
 
+.spacex_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spacex_card {
+    flex: 1;
+    height: 480px;
+    width: 480px;
+}
+
+.spacex_card img {
+    height: 480px;
+    width: 480px;
+}
+
 @media(min-width: 720px){
     #resume_container {
         font-size: 1.5rem;

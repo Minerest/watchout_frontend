@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f0d3e0-2ea4-4bef-9890-860b7d301d84" name="Default Changelist" comment="Added a smoother change of crime stats from previous to next states.">
+      <change afterPath="$PROJECT_DIR$/src/components/SpaceXCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SpaceX.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SpaceX.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +178,7 @@
       <workItem from="1569768453010" duration="1235000" />
       <workItem from="1570135763886" duration="64000" />
       <workItem from="1570742559920" duration="3817000" />
-      <workItem from="1570907404062" duration="3225000" />
+      <workItem from="1570907404062" duration="5116000" />
     </task>
     <servers />
   </component>
