@@ -17,7 +17,8 @@ class App extends Component {
 		this.state = {
 			watchout_showing: false,
 			spacex_showing: false,
-			that_rez_showing: false
+			that_rez_showing: false,
+			spacex_indx: 0
 		}
 
 		this.client = new ApolloClient({
@@ -28,6 +29,14 @@ class App extends Component {
 		this.but_that_rez_tho = this.but_that_rez_tho.bind(this);
 		this.back_to_main = this.back_to_main.bind(this);
 		this.spacex = this.spacex.bind(this);
+		this.update_index = this.update_index.bind(this);
+	}
+
+	update_index (){
+		let i = this.state.spacex_indx + 1;
+		this.setState({
+			spacex_indx: i
+		})
 	}
 
 	start_the_show(){
@@ -51,6 +60,7 @@ class App extends Component {
 			watchout_showing: false,
 			that_rez_showing: false,
 			spacex_showing: true,
+			spacex_indx: 0
 		})
 	}
 
@@ -72,7 +82,9 @@ class App extends Component {
 		else if(this.state.spacex_showing){
 			return(
 				<ApolloProvider client={this.client}>
-					<SpaceX back_to_main={this.back_to_main} />
+					<Button variant="contained" color="primary" size="medium" onClick={this.back_to_main}>HOME</Button>
+					<Button variant="contained" color="secondary" size="medium" onClick={this.update_index}>Update index </Button>
+					<SpaceX back_to_main={this.back_to_main} offset={this.state.spacex_indx} />
 				</ApolloProvider>);
 		}
 		else{
