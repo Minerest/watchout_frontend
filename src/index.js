@@ -97,7 +97,7 @@ class App extends Component {
 					<TypeWriter content={this.skills} />
 					<div className="main_buttons">
 						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button></span>
-						<Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button>
+						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button></span>
 						<Button variant="contained" color="primary" size="medium" onClick={this.spacex}>Random Space X Stuff</Button>
 					</div>
 				</div>
