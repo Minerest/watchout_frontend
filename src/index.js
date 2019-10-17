@@ -9,6 +9,7 @@ import  { Header } from "./components/Header";
 import { SpaceX } from "./components/SpaceX";
 import { ApolloProvider } from "@apollo/react-hooks";
 import  ApolloClient  from 'apollo-boost';
+import {TypeWriter} from "./components/TypeWriter";
 
 class App extends Component {
 
@@ -23,7 +24,9 @@ class App extends Component {
 
 		this.client = new ApolloClient({
 			uri: "//api.spacex.land/graphql"
-		})
+		});
+
+		this.skills = ["Javascript", "Python", "ReactJS", "React-Native", "SQL Databases", "NGINX", "HTML", "CSS"];
 
 		this.start_the_show = this.start_the_show.bind(this);
 		this.but_that_rez_tho = this.but_that_rez_tho.bind(this);
@@ -91,6 +94,7 @@ class App extends Component {
 			return (
 				<div className="master_container">
 					<Header text="Hi! I'm Eric. Welcome!" />
+					<TypeWriter content={this.skills} />
 					<div className="main_buttons">
 						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button></span>
 						<Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button>
