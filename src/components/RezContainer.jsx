@@ -81,7 +81,7 @@ export class RezContainer extends Component {
                                     we had a working, functional app! All of us were crazy excited. Everything was working
                                     flawlessly, although unoptimized. We all had to present our ideas in front of a set
                                     of judges and when it became our turn to present, we were ready. We plugged in the HDMI
-                                    into my laptop, running an Ubuntu derivitive, and......... No output.
+                                    into my laptop, running an Ubuntu derivative, and......... No output.
                                 </p>
                                 <p>
                                     We spent our 5 minutes of fame in front of the audience trying to debug why the HDMI
@@ -92,7 +92,7 @@ export class RezContainer extends Component {
                                 </p>
                                 <p>
                                     After the Hackathon, a couple of us continued to develop the app because we were so
-                                    pationate about the idea. I eventually created a database, a webserver, better backend
+                                    passionate about the idea. I eventually created a database, a webserver, better backend
                                     functionality, and optimized it as much I could. Towards the end of the summer, I decided
                                     I wanted to write a front-end to this app as well so I built it with ReactJS!
                                 </p>
