@@ -6,9 +6,9 @@ export class TypeWriter extends React.Component {
 		super(props);
 		this.state = {
 			content: this.props.content, // array of content to iterate over
-			timeout_id: null,
 			current_text: "",
 		};
+		this.timeout_id = null
 		this.text_index = 0;
 		this.forward = true; // toggles going backwards and forwards
 		this.pause_duration = false;
@@ -22,18 +22,23 @@ export class TypeWriter extends React.Component {
 		this.set_text_timeout();
 	}
 
+	componentWillUnmount() {
+		clearTimeout(this.state.timeout_id);
+	}
+
 	set_text_timeout(){
 		const timeout_duration = 100;
-		console.log("Timeouts");
 		if (this.pause_duration > 0){
-			 setTimeout(() => {
+			clearTimeout(this.timeout_id);
+			setTimeout(() => {
 				this.pause_duration = 0;
+				this.timeout_id = setInterval(this.set_text_timeout, timeout_duration);
 				console.log("pause off")} , this.pause_duration);
 		}
 		else {
-			clearTimeout(this.state.timeout_id);
+			clearTimeout(this.timeout_id);
 			this.set_current_text();
-			this.state.timeout_id = setInterval(this.set_text_timeout, timeout_duration);
+			this.timeout_id = setInterval(this.set_text_timeout, timeout_duration);
 		}
 	}
 

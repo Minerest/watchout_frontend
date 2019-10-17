@@ -195,7 +195,12 @@ body {
     width: 480px
 }
 
-@media(min-width: 720px){
+#type_writer {
+    font-size: 100px;
+    height: 110px;
+}
+
+@media(min-width: 1000px){
     #resume_container {
         font-size: 1.5rem;
     }
@@ -207,6 +212,10 @@ body {
 }
 
 @media(max-width: 1000px){
+    #type_writer {
+        font-size: 50px;
+    }
+
     #avatar_frame{
         width: 100%;
     }
@@ -227,23 +236,14 @@ body {
         left: 0;
         height: 100%;
     }
-    .master_container h1 {
-        margin-left: 20%;
-    }
     .input_box {
         width: 100%;
         left: 0;
         margin-left: 0;
     }
     .watchout h1 {
-        font-size: 2em;
+        font-size: 3em;
     }
-    .main_buttons {
-        margin-left: 15%;
-        position: relative;
-    }
-
-
 }
 
 #banner {
@@ -260,7 +260,3 @@ body {
     font-size: 20px;
 }
 
-#type_writer {
-    font-size: 100px;
-    height: 110px;
-}
