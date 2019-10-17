@@ -24,13 +24,17 @@ export class TypeWriter extends React.Component {
 
 	set_text_timeout(){
 		const timeout_duration = 100;
+		console.log("Timeouts");
 		if (this.pause_duration > 0){
-			clearTimeout(this.state.timeout_id);
-			this.setState({timeout_id: setTimeout(() => {this.pause_duration = 0} , this.pause_duration)});
+			 setTimeout(() => {
+				this.pause_duration = 0;
+				console.log("pause off")} , this.pause_duration);
 		}
-		clearTimeout(this.state.timeout_id);
-		this.set_current_text();
-		this.state.timeout_id = setInterval(this.set_text_timeout, timeout_duration);
+		else {
+			clearTimeout(this.state.timeout_id);
+			this.set_current_text();
+			this.state.timeout_id = setInterval(this.set_text_timeout, timeout_duration);
+		}
 	}
 
 	set_current_text(){
@@ -38,61 +42,38 @@ export class TypeWriter extends React.Component {
 		let len = this.state.content[this.content_index].length;
 		let cur_text;
 		this.text_index = this.forward ? this.text_index + 1 : this.text_index - 1;
-		console.log(this.text_index);
 		if (this.text_index <= len && this.forward){
 			cur_text = this.current_string.substring(0, this.text_index);
-			// console.log(cur_text);
 			this.setState({
 				current_text: cur_text
 			});
-		}
-		else {
-			if (this.forward){
-				this.forward = !this.forward;
-				this.pause_duration = 3000;
-			}
-			else if (!this.forward && this.text_index > 0){
-				cur_text = this.current_string.substring(0, this.text_index);
-				console.log("REVERSE: " + cur_text);
-				this.setState({current_text: cur_text});
-			}
-			else {
-				this.forward = !this.forward;
-				this.text_index = 0;
-				this.pause_duration = 450;
-				this.content_index++;
-				if(this.content_index >= this.state.content.length){
-					this.content_index = 0;
-				}
-				this.current_string = this.state.content[this.content_index];
-			}
+			return;
 		}
 
-		// else if (this.state.current_text > len && this.forward){
-		// 	this.forward = !this.forward;
-		// 	this.pause_duration = 3000;
-		// }
-		// else if (!this.forward && this.state.current_text > 0){
-		// 	cur_text = this.current_string.substring(0, this.text_index);
-		// 	console.log("REVERSE: " + cur_text);
-		// 	this.setState({cur_text: cur_text});
-		// }
-		// else {
-		// 	this.forward = !this.forward;
-		// 	this.text_index = 0;
-		// 	this.pause_duration = 450;
-		// 	this.content_index++;
-		// 	if(this.content_index >= this.state.content.length){
-		// 		this.content_index = 0;
-		// 	}
-		// 	this.current_string = this.state.content[this.content_index];
-		// }
+		if (this.forward){
+			this.forward = !this.forward;
+			this.pause_duration = 1500;
+		}
+		else if (!this.forward && this.text_index >= 0){
+			cur_text = this.current_string.substring(0, this.text_index);
+			this.setState({current_text: cur_text});
+		}
+		else {
+			this.forward = !this.forward;
+			this.text_index = 0;
+			this.pause_duration = 450;
+			this.content_index++;
+			if(this.content_index >= this.state.content.length){
+				this.content_index = 0;
+			}
+			this.current_string = this.state.content[this.content_index];
+		}
 
 	}
 
 	render(){
 		return (
-			<p id="TypeWriter">{this.state.current_text}</p>
+			<p id="type_writer">{this.state.current_text}</p>
 		)
 	}
 }
