@@ -46,13 +46,17 @@ export class WatchoutContainer extends Component {
         // this.update_banner = this.update_banner.bind(this);
         this.banner_wrapper = this.banner_wrapper.bind(this);
         this.should_banner_load = true;
+        this.interval_id = null;
+    }
+    componentWillUnmount() {
+        clearInterval(this.interval_id);
     }
 
     banner_timeout(){
 
         if (this.should_banner_load){
             this.should_banner_load = false;
-            setInterval(() => {
+            this.interval_id = setInterval(() => {
                 let n = Math.floor(Math.random() * this.state.resp_for_banner.length);
                 let obj = this.state.resp_for_banner[n];
                 this.setState({

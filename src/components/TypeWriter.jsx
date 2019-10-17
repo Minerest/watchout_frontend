@@ -8,7 +8,7 @@ export class TypeWriter extends React.Component {
 			content: this.props.content, // array of content to iterate over
 			current_text: "",
 		};
-		this.timeout_id = null
+		this.timeout_id = null;
 		this.text_index = 0;
 		this.forward = true; // toggles going backwards and forwards
 		this.pause_duration = false;
