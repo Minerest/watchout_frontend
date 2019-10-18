@@ -46,6 +46,8 @@ body {
 .maps_container {
     margin-top: 0%;
     position: relative;
+    /* So this text align fixes a weird map load */
+    text-align: left;
 }
 
 

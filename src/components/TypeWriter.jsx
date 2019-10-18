@@ -9,6 +9,7 @@ export class TypeWriter extends React.Component {
 			current_text: "",
 		};
 		this.timeout_id = null;
+		this.pause_timeout = null;
 		this.text_index = 0;
 		this.forward = true; // toggles going backwards and forwards
 		this.pause_duration = false;
@@ -24,13 +25,17 @@ export class TypeWriter extends React.Component {
 
 	componentWillUnmount() {
 		clearTimeout(this.state.timeout_id);
+		clearTimeout(this.pause_timeout);
 	}
 
 	set_text_timeout(){
+
+
 		const timeout_duration = 100;
 		if (this.pause_duration > 0){
-			clearTimeout(this.timeout_id);
-			setTimeout(() => {
+			clearTimeout(this.pause_timeout);
+			this.pause_timeout = setTimeout(() => {
+				console.log(this.pause_duration);
 				this.pause_duration = 0;
 				this.timeout_id = setInterval(this.set_text_timeout, timeout_duration);
 				console.log("pause off")} , this.pause_duration);
@@ -58,6 +63,7 @@ export class TypeWriter extends React.Component {
 		if (this.forward){
 			this.forward = !this.forward;
 			this.pause_duration = 1500;
+
 		}
 		else if (!this.forward && this.text_index >= 0){
 			cur_text = this.current_string.substring(0, this.text_index);
@@ -65,6 +71,7 @@ export class TypeWriter extends React.Component {
 		}
 		else {
 			this.forward = !this.forward;
+
 			this.text_index = 0;
 			this.pause_duration = 450;
 			this.content_index++;

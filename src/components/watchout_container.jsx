@@ -7,7 +7,7 @@ import {Header} from "./Header";
 import {Thermometer} from "./Thermometer";
 import { WatchoutBanner } from "./watchout_banner";
 import { Spring, config } from 'react-spring/renderprops';
-import {Button} from "@material-ui/core";
+import {TypeWriter} from "./TypeWriter";
 
 
 export class WatchoutContainer extends Component {
@@ -136,8 +136,8 @@ export class WatchoutContainer extends Component {
                            </div>
                            <div className="maps_container">
                                <OLMap update={this.update_dataview} back_to_main={this.props.back_to_main} update_banner={this.update_banner}/>
-                            <WatchoutBanner desc={this.state.Description} date={this.state.Date}
-                                            coords={this.state.Coords}/>
+                                <WatchoutBanner desc={this.state.Description} date={this.state.Date}
+                                                coords={this.state.Coords}/>
                            </div>
                        </div>
                    }

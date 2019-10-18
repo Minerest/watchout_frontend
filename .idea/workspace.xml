@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TypeWriter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TypeWriter.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/watchout_container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/watchout_container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +183,8 @@
       <workItem from="1571010418652" duration="526000" />
       <workItem from="1571326620210" duration="4822000" />
       <workItem from="1571331849254" duration="2711000" />
-      <workItem from="1571341468913" duration="238000" />
+      <workItem from="1571341468913" duration="2937000" />
+      <workItem from="1571361808634" duration="229000" />
     </task>
     <servers />
   </component>
