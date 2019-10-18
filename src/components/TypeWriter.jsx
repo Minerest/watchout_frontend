@@ -30,9 +30,9 @@ export class TypeWriter extends React.Component {
 
 	set_text_timeout(){
 
-
-		const timeout_duration = 100;
+		const timeout_duration = 120;
 		if (this.pause_duration > 0){
+			console.log("HEYYYY");
 			clearTimeout(this.pause_timeout);
 			this.pause_timeout = setTimeout(() => {
 				console.log(this.pause_duration);
@@ -42,13 +42,13 @@ export class TypeWriter extends React.Component {
 		}
 		else {
 			clearTimeout(this.timeout_id);
-			this.set_current_text();
-			this.timeout_id = setInterval(this.set_text_timeout, timeout_duration);
+			this.timeout_id = setInterval(()=>{
+				this.set_current_text();
+			}, timeout_duration);
 		}
 	}
 
 	set_current_text(){
-
 		let len = this.state.content[this.content_index].length;
 		let cur_text;
 		this.text_index = this.forward ? this.text_index + 1 : this.text_index - 1;
@@ -63,6 +63,7 @@ export class TypeWriter extends React.Component {
 		if (this.forward){
 			this.forward = !this.forward;
 			this.pause_duration = 1500;
+			console.log("He22y");
 
 		}
 		else if (!this.forward && this.text_index >= 0){
@@ -74,6 +75,7 @@ export class TypeWriter extends React.Component {
 
 			this.text_index = 0;
 			this.pause_duration = 450;
+			console.log("Hey");
 			this.content_index++;
 			if(this.content_index >= this.state.content.length){
 				this.content_index = 0;
