@@ -26,7 +26,8 @@ class App extends Component {
 			uri: "//api.spacex.land/graphql"
 		});
 
-		this.skills = ["Javascript", "Python", "ReactJS", "React-Native", "SQL Databases", "NGINX", "HTML", "CSS"];
+		this.skills = ["Javascript", "Python", "ReactJS", "React-Native", "SQL Databases", "NGINX", "HTML", "CSS",
+						"C/C++", "git", "Excel Automation", "API Development", "Engineer"];
 
 		this.start_the_show = this.start_the_show.bind(this);
 		this.but_that_rez_tho = this.but_that_rez_tho.bind(this);
@@ -85,6 +86,7 @@ class App extends Component {
 		else if(this.state.spacex_showing){
 			return(
 				<ApolloProvider client={this.client}>
+					<h2>Click on the images!</h2>
 					<Button variant="contained" color="primary" size="medium" onClick={this.back_to_main}>HOME</Button>
 					<Button variant="contained" color="secondary" size="medium" onClick={this.update_index}>Update index </Button>
 					<SpaceX back_to_main={this.back_to_main} offset={this.state.spacex_indx} />

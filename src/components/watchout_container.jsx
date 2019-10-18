@@ -124,6 +124,7 @@ export class WatchoutContainer extends Component {
                    config={config.slow}>
                    {props =>
                        <div className="master_container" style={props}>
+                           <h2>Tap or click on the map!</h2>
                            <div className="that_div">
                                <div>
                                    <div className="data">
