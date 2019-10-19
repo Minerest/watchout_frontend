@@ -24,6 +24,12 @@ export class DropdownMenu extends React.Component {
     }
 
     render() {
+        console.log(window.innerWidth);
+        if (window.innerWidth <= 480){
+
+            console.log("hahaha");
+            return "";
+        }
 
         if (this.state.open) {
             return (
