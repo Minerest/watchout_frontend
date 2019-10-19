@@ -58,7 +58,7 @@ export class TypeWriter extends React.Component {
 
 		if (this.forward){
 			this.forward = !this.forward;
-			this.pause_duration = 1500;
+			this.pause_duration = 1000;
 			clearInterval(this.interval_id);
 			this.set_text_timeout();
 			return;

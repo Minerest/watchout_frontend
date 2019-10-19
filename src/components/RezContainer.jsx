@@ -10,8 +10,6 @@ export class RezContainer extends Component {
     render(){
         return(
             <div>
-                {/*<div className="rez_header">*/}
-                {/*</div>*/}
                 <div id="avatar_div">
                     <div className="rez_header"><Header text="The Watchout! Writeup" /> </div>
                     <Spring from={{opacity:0}} to={{opacity:1}} config={config.slow}>

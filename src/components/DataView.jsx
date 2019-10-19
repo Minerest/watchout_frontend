@@ -8,6 +8,7 @@ export class DataView extends Component {
         return (
             <div className="data_items">
                 <div className="left_items">
+                    {/*TODO: There has to be a better way than doing this.*/}
                     <Spring from={{number:this.props.last_d.assault}} to={{number:this.props.d.assault}}>
                         {props => <p>Assault: {props.number.toFixed(0)}</p> }
                     </Spring>

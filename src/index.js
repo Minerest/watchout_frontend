@@ -27,7 +27,8 @@ class App extends Component {
 		});
 
 		this.skills = ["Javascript", "Python", "ReactJS", "React-Native", "SQL Databases", "NGINX", "HTML", "CSS",
-						"C/C++", "git", "Excel Automation", "API Development", "Engineer"];
+						"C/C++", "git", "Excel Automation", "API Development", "Engineer", "GraphQL"];
+
 
 		this.start_the_show = this.start_the_show.bind(this);
 		this.but_that_rez_tho = this.but_that_rez_tho.bind(this);

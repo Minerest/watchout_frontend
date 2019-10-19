@@ -1,11 +1,12 @@
 import React from "react";
-import  ApolloClient  from 'apollo-boost';
 import { gql } from 'apollo-boost';
 import {SpaceXCard} from './SpaceXCard';
 import { ApolloProvider, useQuery } from "@apollo/react-hooks";
-import { Button} from "@material-ui/core";
+import {DropdownMenu} from "./DropdownMenu";
 
 export function SpaceX (props) {
+
+    const skills_used = ["Graph QL", "ReactJS", "HTML", "CSS", "SpaceX API"];
 
     const GET_DATA = gql`{
                 launchesPast(limit: 10, offset: ${props.offset * 10}) {
@@ -24,6 +25,7 @@ export function SpaceX (props) {
         return (
 
                 <div  className="spacex_container">
+                    <DropdownMenu items={skills_used} />
                     { data.launchesPast.map( launch => <SpaceXCard launch={ launch } key={ launch.mission_name }/> ) }
                 </div>
 

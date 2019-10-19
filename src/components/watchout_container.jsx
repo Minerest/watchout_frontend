@@ -8,6 +8,7 @@ import {Thermometer} from "./Thermometer";
 import { WatchoutBanner } from "./watchout_banner";
 import { Spring, config } from 'react-spring/renderprops';
 import {TypeWriter} from "./TypeWriter";
+import {DropdownMenu} from "./DropdownMenu";
 
 
 export class WatchoutContainer extends Component {
@@ -116,8 +117,10 @@ export class WatchoutContainer extends Component {
     render(){
         let custom_configs = config.gentle;
         custom_configs.duration = 450;
+        const skills_used = ["Python", "Flask", "MySQL", "SQL Alchemy" , "ReactJS", "AJAX", "Custom API"];
         return(
             <div>
+                <DropdownMenu items={skills_used}/>
                 <span className="watchout"><Header text="Watchout!"/></span>
                 <Spring
                    from={{opacity:0, marginTop:0}} to={{opacity:1, marginTop:0}}
@@ -125,10 +128,11 @@ export class WatchoutContainer extends Component {
                    {props =>
                        <div className="master_container" style={props}>
                            <h2>Tap or click on the map!</h2>
+                           {/*TODO: Make this its own component and delete unnecessary divs*/}
                            <div className="that_div">
                                <div>
                                    <div className="data">
-                                       <DataView last_d={this.state.last_crime_stats} d={this.state.crime_stats} amount_of_entries="3"/>
+                                       <DataView last_d={this.state.last_crime_stats} d={this.state.crime_stats} />
                                    </div>
                                    <div className="thermodiv">
                                        <Thermometer danger_rating={this.state.danger_rating}/>
