@@ -11,7 +11,7 @@ export class DropdownMenu extends React.Component {
         this.list_items = this.props.items.map(item => <li>{item}</li>);
         this.handleClick = this.handleClick.bind(this);
         this.closed_height = 50; // in pixels
-        this.open_height = 200; // in pixels
+        this.open_height = 240; // in pixels
 
     }
 
@@ -26,8 +26,6 @@ export class DropdownMenu extends React.Component {
     render() {
         console.log(window.innerWidth);
         if (window.innerWidth <= 480){
-
-            console.log("hahaha");
             return "";
         }
 
@@ -35,7 +33,7 @@ export class DropdownMenu extends React.Component {
             return (
             <Spring from={{height: this.closed_height, opacity:.5}} to={{height:this.open_height, opacity: .9}}>
                 {props => (
-                    <div className="dropdown_menu open" style={{"height": props.height}} onClick={this.handleClick}>
+                    <div className="dropdown_menu open" style={{height: props.height}} onClick={this.handleClick}>
                         <h2>Skills</h2>
                         <ul style={{"opacity": props.opacity}}>{this.list_items}</ul>
                     </div>
