@@ -4,6 +4,7 @@ import { Component } from 'react';
 import './index.css';
 import { WatchoutContainer } from './components/watchout_container';
 import { RezContainer } from './components/RezContainer';
+import { CVContainer } from './components/CVContainer';
 import { Button} from "@material-ui/core";
 import  { Header } from "./components/Header";
 import { SpaceX } from "./components/SpaceX";
@@ -19,6 +20,7 @@ class App extends Component {
 			watchout_showing: false,
 			spacex_showing: false,
 			that_rez_showing: false,
+			cv_showing: false,
 			spacex_indx: 0
 		}
 
@@ -26,7 +28,7 @@ class App extends Component {
 			uri: "//api.spacex.land/graphql"
 		});
 
-		this.skills = ["Javascript", "Python", "ReactJS", "React-Native", "SQL Databases", "NGINX", "HTML", "CSS",
+		this.skills = ["Javascript", "Python", "ReactJS", "React-Native", "SQL Databases", "NGINX", "HTML | CSS",
 						"C/C++", "git", "Excel Automation", "API Development", "GraphQL"];
 
 
@@ -34,6 +36,7 @@ class App extends Component {
 		this.but_that_rez_tho = this.but_that_rez_tho.bind(this);
 		this.back_to_main = this.back_to_main.bind(this);
 		this.spacex = this.spacex.bind(this);
+		this.but_that_cv_tho = this.but_that_cv_tho.bind(this);
 		this.update_index = this.update_index.bind(this);
 	}
 
@@ -49,6 +52,7 @@ class App extends Component {
 				watchout_showing:true,
 				that_rez_showing: false,
 				spacex_showing: false,
+				cv_showing: false
 		});
 	}
 
@@ -57,6 +61,7 @@ class App extends Component {
 			watchout_showing: false,
 			that_rez_showing: true,
 			spacex_showing: false,
+			cv_showing: false
 		});
 	}
 
@@ -65,7 +70,17 @@ class App extends Component {
 			watchout_showing: false,
 			that_rez_showing: false,
 			spacex_showing: true,
+			cv_showing: false,
 			spacex_indx: 0
+		})
+	}
+
+	but_that_cv_tho(){
+		this.setState({
+			watchout_showing: false,
+			that_rez_showing: false,
+			spacex_showing: false,
+			cv_showing: true
 		})
 	}
 
@@ -74,12 +89,16 @@ class App extends Component {
 			watchout_showing: false,
 			that_rez_showing: false,
 			spacex_showing: false,
+			cv_showing: false
 		})
 	}
 
 	render(){
 		if (this.state.watchout_showing) {
 			return (<WatchoutContainer back_to_main={this.back_to_main}/>);
+		}
+		if (this.state.cv_showing) {
+			return <CVContainer back_to_main={this.back_to_main} />
 		}
 		else if(this.state.that_rez_showing){
 			return(<RezContainer back_to_main={this.back_to_main} start_the_show={this.start_the_show}/>);
@@ -101,6 +120,7 @@ class App extends Component {
 					<div className="main_buttons">
 						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button></span>
 						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button></span>
+						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.but_that_cv_tho}>What about your CV?</Button></span>
 						<Button variant="contained" color="primary" size="medium" onClick={this.spacex}>Random Space X Stuff</Button>
 					</div>
 				</div>

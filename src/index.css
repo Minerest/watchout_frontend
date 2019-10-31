@@ -10,6 +10,7 @@ body {
     margin: auto;
     text-align: center;
 }
+
 .master_container h1 {
     position: relative;
 }
@@ -180,6 +181,50 @@ body {
 
 .dropdown_menu h2 {
     margin-left: 5%;
+}
+
+
+#cv_container {
+    background-color: #4e6b79;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 5px;
+    align-items: flex-start;
+}
+
+#cv_body p {
+    line-height: 1.4em;
+    font-size: 1.6em;
+}
+
+
+#cv_container h2 {
+    font-size: 3em;
+}
+
+#cv_header {
+    background-color: #1b2124;
+    color: white;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    line-height: 1.5em;
+}
+
+#cv_header p {
+    width: 33%;
+}
+
+.cv_project {
+    /*flex-direction: column;*/
+    flex-basis: 500px;
+    margin: auto;
+    background-color: #1b2124;
+    color: white;
+    border-radius: 10px;
+    padding: 60px;
+    max-width: 500px;
 }
 
 @media(max-width: 680px){
