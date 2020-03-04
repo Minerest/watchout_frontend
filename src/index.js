@@ -11,6 +11,7 @@ import { SpaceX } from "./components/SpaceX";
 import { ApolloProvider } from "@apollo/react-hooks";
 import  ApolloClient  from 'apollo-boost';
 import {TypeWriter} from "./components/TypeWriter";
+import android_app from "./REMeds-3.2.apk";
 
 class App extends Component {
 
@@ -121,6 +122,7 @@ class App extends Component {
 						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.start_the_show}>The Watchout! App</Button></span>
 						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.but_that_rez_tho}>But how is this made?</Button></span>
 						<span className="home_button"><Button variant="contained" color="primary" size="medium" onClick={this.but_that_cv_tho}>What about your CV?</Button></span>
+						<span className="home_button"><Button variant="contained" color="primary" size="large" onClick={()=>window.open(android_app)}> RE:Meds Android</Button></span>
 						<Button variant="contained" color="primary" size="medium" onClick={this.spacex}>Random Space X Stuff</Button>
 					</div>
 				</div>
